@@ -37,6 +37,7 @@ dependencies:
   flutter_svg: ^1.0.0
   auth_buttons: ^2.0.3
   get: ^4.6.1
+  percent_indicator: ^3.4.0
 
 dev_dependencies:
   flutter_test:

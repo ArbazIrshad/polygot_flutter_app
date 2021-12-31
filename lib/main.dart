@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:polygot_app/features/daily_review/presentation/views/daily_review_dialog.dart';
+import 'package:polygot_app/features/daily_review/presentation/views/daily_review_view.dart';
+import 'package:polygot_app/features/exercises/presentation/views/exercise_view.dart';
 
 import 'features/authentication/presentation/views/welcome_view.dart';
 
@@ -15,7 +18,7 @@ class PolygotApp extends StatelessWidget {
     return const GetMaterialApp(
       title: 'PolyGotApp',
       debugShowCheckedModeBanner: false,
-      home: WelcomeView(),
+      home: ExerciseView(),
     );
   }
 }
