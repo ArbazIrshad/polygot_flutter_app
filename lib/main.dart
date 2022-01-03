@@ -18,7 +18,7 @@ class PolygotApp extends StatelessWidget {
     return const GetMaterialApp(
       title: 'PolyGotApp',
       debugShowCheckedModeBanner: false,
-      home: ExerciseView(),
+      home: SelectErrorsExerciseView(),
     );
   }
 }
