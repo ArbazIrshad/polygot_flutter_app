@@ -72,67 +72,71 @@ class SelectErrorsExerciseView extends StatelessWidget {
                 height: 18.0,
               ),
               Text(
-                'Grammar',
+                'Select the errors',
                 style: TextStyle(
-                    color: Color(0xFFF178B6),
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600),
-              ),
-              Text(
-                'Complete the sentence',
-                style: TextStyle(
-                    color: Colors.white54,
-                    fontSize: 18,
+                    color: Colors.white,
+                    fontSize: 16,
                     fontWeight: FontWeight.w600),
               ),
               const SizedBox(
-                height: 50.0,
+                height: 18.0,
               ),
-              RichText(
-                  text: TextSpan(
+              Container(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [Colors.white10, Colors.transparent],
+                )),
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 60.0,
+                    ),
+                    RichText(
+                      text: TextSpan(
+                        text: 'Morrsion how ',
+                        children: [
+                          TextSpan(
+                            text: 'cats\n',
+                            style: TextStyle(
+                              decoration: TextDecoration.lineThrough,
+                              decorationColor: Color(0xFFFF6978),
+                              decorationThickness: 2.0,
+                            ),
+                          ),
+                          TextSpan(text: 'are you?'),
+                        ],
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 50.0,
+                    ),
+                    Text(
+                      'Selected words',
                       style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.white),
+                          color: Colors.white54,
+                          fontSize: 15,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    const SizedBox(
+                      height: 12.0,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                    TextSpan(text: 'I need'),
-                    TextSpan(
-                      text: '.......',
-                      style: TextStyle(
-                        color: Color(0xFFF178B6),
-                      ),
+                        SelectedWordWidget(text: 'cats'),
+                      ],
                     ),
-                    TextSpan(text: 'the letter'),
-                    TextSpan(
-                      text: '.......',
-                      style: TextStyle(
-                        color: Color(0xFFF178B6),
-                      ),
-                    ),
-                    TextSpan(text: 'University'),
-                  ])),
-              const SizedBox(
-                height: 50.0,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  WordTileWidget(text: 'To'),
-                  WordTileWidget(text: 'For'),
-                  WordTileWidget(text: 'a'),
-                  WordTileWidget(text: 'With'),
-                  WordTileWidget(text: 'To'),
-                ],
+                  ],
+                ),
               ),
               const SizedBox(
-                height: 12.0,
-              ),
-              const Divider(
-                color: Colors.white10,
-                thickness: 1.2,
-              ),
-              const SizedBox(
-                height: 50.0,
+                height: 26.0,
               ),
               Text(
                 '15 words left',
@@ -146,7 +150,55 @@ class SelectErrorsExerciseView extends StatelessWidget {
               ),
               RoundedButtonWidget(
                 buttonText: 'Validate',
-                onpressed: () {},
+                onpressed: () {
+                  Get.dialog(Dialog(
+                    backgroundColor: Colors.blueGrey.shade300,
+                    child: Container(
+                      height: 266.0,
+                      // width: 282,
+                      // color: Colors.black,
+                      // margin: const EdgeInsetsDirectional.only(end: 8.0),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8.0, vertical: 2.0),
+
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Icon(
+                            Icons.edit_outlined,
+                            color: Color(0xFFEA8694),
+                            size: 40.0,
+                          ),
+                          Text(
+                            'Mistake',
+                            style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                decorationColor: Color(0xFFEA8694),
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white,
+                                fontSize: 24),
+                          ),
+                          Text(
+                            'Please try again',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 17),
+                          ),
+                          RoundedButtonWidget(
+                            buttonText: 'Close',
+                            onpressed: () => Get.back(),
+                            width: 240,
+                            colors: [
+                              Color.fromRGBO(70, 242, 255, 1.0),
+                              Color.fromRGBO(244, 87, 202, 1.0),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ));
+                },
                 width: 348,
                 colors: [
                   Color.fromRGBO(70, 242, 255, 1.0),
@@ -195,9 +247,9 @@ class SelectErrorsExerciseView extends StatelessWidget {
   }
 }
 
-class WordTileWidget extends StatelessWidget {
+class SelectedWordWidget extends StatelessWidget {
   final String text;
-  const WordTileWidget({
+  const SelectedWordWidget({
     Key? key,
     required this.text,
   }) : super(key: key);
@@ -208,16 +260,11 @@ class WordTileWidget extends StatelessWidget {
       margin: const EdgeInsetsDirectional.only(end: 8.0),
       padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 2.0),
       alignment: Alignment.center,
-      height: 44.0,
+      height: 36.0,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12.0),
-          border: Border.all(color: Colors.white38),
-          gradient: LinearGradient(
-            colors: [
-              Colors.white.withOpacity(0.05),
-              Color(0xFFC4C4C4).withOpacity(0.02)
-            ],
-          )),
+        borderRadius: BorderRadius.circular(8.0),
+        border: Border.all(color: Color(0xFFFF6978)),
+      ),
       child: Text(
         text,
         style: TextStyle(
