@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:polygot_app/features/daily_review/presentation/views/daily_review_dialog.dart';
 import 'package:polygot_app/features/daily_review/presentation/views/daily_review_view.dart';
+import 'package:polygot_app/features/dashboard/presentation/views/fav_word_review.dart';
+import 'package:polygot_app/features/dashboard/presentation/views/profile_view.dart';
 import 'package:polygot_app/features/exercises/presentation/views/exercise_view.dart';
 import 'package:polygot_app/features/settings/presentation/views/settings_view.dart';
 
@@ -19,7 +21,7 @@ class PolygotApp extends StatelessWidget {
     return const GetMaterialApp(
       title: 'PolyGotApp',
       debugShowCheckedModeBanner: false,
-      home: SettingsView(),
+      home: FavouriteWordReviewView(),
     );
   }
 }
