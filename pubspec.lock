@@ -92,6 +92,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.1.2"
+  fluid_bottom_nav_bar:
+    dependency: "direct main"
+    description:
+      name: fluid_bottom_nav_bar
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.3.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -165,6 +172,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.7.0"
+  outline_gradient_button:
+    dependency: "direct main"
+    description:
+      name: outline_gradient_button
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0+1"
   path:
     dependency: transitive
     description:

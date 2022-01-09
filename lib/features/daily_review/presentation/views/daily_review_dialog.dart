@@ -24,6 +24,7 @@ class DailyReviewDialog extends StatelessWidget {
           ),
         ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               'Daily Practice',
@@ -32,6 +33,9 @@ class DailyReviewDialog extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                   color: Colors.white),
             ),
+            const SizedBox(
+              height: 8.0,
+            ),
             Text(
               'Practice Daily to get results',
               style: TextStyle(
@@ -39,9 +43,13 @@ class DailyReviewDialog extends StatelessWidget {
                   fontWeight: FontWeight.w400,
                   color: Colors.white54),
             ),
+            const SizedBox(
+              height: 12.0,
+            ),
             Container(
-              width: 357,
+              // width: 357,
               height: 236,
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12.0),
                 gradient: LinearGradient(
@@ -52,107 +60,33 @@ class DailyReviewDialog extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  InkWell(
+                  DailyPracticeSelectionWidget(
+                    practiceLength: 'Short',
+                    wordCount: 30,
                     onTap: () {},
-                    child: Container(
-                      width: 343,
-                      height: 46,
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 40.0,
-                            width: 40.0,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(8.0),
-                                // border: Border.all(
-                                //   color: Color(0xFF8F9BB3).withOpacity(1.0),
-                                // ),
-                                gradient: LinearGradient(colors: [
-                                  Colors.white.withOpacity(0.05),
-                                  Color(0xFFC4C4C4).withOpacity(0.02)
-                                ])),
-                            child: Container(
-                              height: 16.0,
-                              width: 16.0,
-                              decoration: BoxDecoration(
-                                // borderRadius: BorderRadius.circular(16.0),
-                                shape: BoxShape.circle,
-
-                                border: Border.all(
-                                  color: Color(0xFF8F9BB3).withOpacity(1.0),
-                                ),
-                                // color: Color(0xFF8F9BB3).withOpacity(0.2),
-                              ),
-                              child: Text(
-                                  MediaQuery.of(context).size.width.toString()),
-                            ),
-                          ),
-                          Container(
-                            color: Colors.white,
-                            child: Column(
-                              // mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Container(
-                                  color: Colors.black,
-                                  child: Expanded(
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Short',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w600,
-                                              fontSize: 17.0,
-                                              // height: 20,
-                                              color: Colors.white),
-                                        ),
-                                        Text(
-                                          '30 Words',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w600,
-                                              fontSize: 13.0,
-                                              // height: 20,
-                                              color: Colors.white70),
-                                        ),
-                                        RichText(
-                                            text: TextSpan(
-                                                style: TextStyle(
-                                                    color: Colors
-                                                        .orangeAccent[400],
-                                                    fontWeight: FontWeight.w600,
-                                                    fontSize: 12.0),
-                                                children: [
-                                              TextSpan(text: 'Premium'),
-                                              WidgetSpan(
-                                                  child: Icon(
-                                                Icons.star,
-                                                color: Colors.orangeAccent[400],
-                                                size: 12,
-                                              ))
-                                            ])),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                LinearPercentIndicator(
-                                  percent: 0.7,
-                                  width: 274,
-                                  lineHeight: 9.0,
-                                  progressColor: Color(0xFF6FCF97),
-                                  backgroundColor:
-                                      Color(0xFFC4C4C4).withOpacity(0.32),
-                                )
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  )
+                    percent: 0.3,
+                    color: Color(0xFFF178B6),
+                  ),
+                  DailyPracticeSelectionWidget(
+                    practiceLength: 'Medium',
+                    wordCount: 80,
+                    onTap: () {},
+                    percent: 0.7,
+                    color: Color(0xFF6FCF97),
+                  ),
+                  DailyPracticeSelectionWidget(
+                    practiceLength: 'Complete',
+                    wordCount: 100,
+                    onTap: () {},
+                    percent: 1.0,
+                    color: Color(0xFFA5A6F6),
+                    isSelected: true,
+                  ),
                 ],
               ),
+            ),
+            const SizedBox(
+              height: 26.0,
             ),
             RoundedButtonWidget(
               buttonText: 'Start',
@@ -171,6 +105,143 @@ class DailyReviewDialog extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class DailyPracticeSelectionWidget extends StatelessWidget {
+  final String practiceLength;
+  final int wordCount;
+  final Color color;
+  final double percent;
+  final bool isSelected;
+  final bool isPremium;
+
+  final VoidCallback onTap;
+
+  const DailyPracticeSelectionWidget({
+    Key? key,
+    required this.practiceLength,
+    required this.wordCount,
+    required this.color,
+    required this.percent,
+    required this.onTap,
+    this.isSelected = false,
+    this.isPremium = false,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        InkWell(
+          onTap: onTap,
+          child: Container(
+            // width: 343,
+            height: 68,
+            padding: const EdgeInsets.symmetric(horizontal: 4.0),
+            decoration: BoxDecoration(
+              color: isSelected ? Colors.white12 : null,
+              borderRadius: BorderRadius.circular(8.0),
+            ),
+            child: Row(
+              children: [
+                Container(
+                  height: 40.0,
+                  width: 40.0,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8.0),
+                      border: Border.all(
+                        color: Color(0xFF8F9BB3).withOpacity(1.0),
+                      ),
+                      gradient: LinearGradient(colors: [
+                        Colors.white.withOpacity(0.05),
+                        Color(0xFFC4C4C4).withOpacity(0.02)
+                      ])),
+                  child: Align(
+                    child: Container(
+                      height: 16.0,
+                      width: 16.0,
+                      decoration: BoxDecoration(
+                        // borderRadius: BorderRadius.circular(16.0),
+                        shape: BoxShape.circle,
+                        color: isSelected ? color : null,
+                        border: Border.all(
+                          color: Color(0xFF8F9BB3).withOpacity(1.0),
+                        ),
+                        // color: Color(0xFF8F9BB3).withOpacity(0.2),
+                      ),
+                      // child: Text(
+                      //     MediaQuery.of(context).size.width.toString()),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  width: 4.0,
+                ),
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      // mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          practiceLength,
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 17.0,
+                              // height: 20,
+                              color: Colors.white),
+                        ),
+                        const SizedBox(
+                          width: 12.0,
+                        ),
+                        Text(
+                          '$wordCount Words',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 13.0,
+                              // height: 20,
+                              color: Colors.white70),
+                        ),
+                        const SizedBox(
+                          width: 84.0,
+                        ),
+                        if (isPremium)
+                          RichText(
+                              text: TextSpan(
+                                  style: TextStyle(
+                                      color: Colors.orangeAccent[400],
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 12.0),
+                                  children: [
+                                TextSpan(text: 'Premium'),
+                                WidgetSpan(
+                                    child: Icon(
+                                  Icons.star,
+                                  color: Colors.orangeAccent[400],
+                                  size: 12,
+                                ))
+                              ])),
+                      ],
+                    ),
+                    LinearPercentIndicator(
+                      percent: percent,
+                      width: 274,
+                      lineHeight: 9.0,
+                      padding: EdgeInsets.symmetric(horizontal: 4.0),
+                      progressColor: color,
+                      backgroundColor: Color(0xFFC4C4C4).withOpacity(0.32),
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
+        )
+      ],
     );
   }
 }
