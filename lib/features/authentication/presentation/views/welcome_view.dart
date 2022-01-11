@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:auth_buttons/auth_buttons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:polygot_app/features/authentication/presentation/views/login_view.dart';
-import 'package:polygot_app/features/authentication/presentation/views/signup_view.dart';
+import 'login_view.dart';
+import 'signup_view.dart';
 
 import '../widgets/or_divider.dart';
 import '../../../../shared/widgets/rounded_button.dart';
@@ -27,11 +27,8 @@ class WelcomeView extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          // stops: [0.0, 0.01, 0.02, 0.25, 0.9],
           colors: [
-            // Color(0xffB7EEF2),
             const Color(0xffFF9A5E).withOpacity(0.8),
-            // Color(0xffFF9A5E),
             const Color(0xff282F54),
             const Color(0xFF172155),
           ],
@@ -65,7 +62,7 @@ class WelcomeView extends StatelessWidget {
               const SizedBox(
                 height: 10.0,
               ),
-              RoundedButtonWidget(
+              GradientRoundedButtonWidget(
                 buttonText: 'Login',
                 onpressed: () {
                   Get.to(LoginView());
@@ -80,7 +77,7 @@ class WelcomeView extends StatelessWidget {
               const SizedBox(
                 height: 10.0,
               ),
-              RoundedButtonWidget(
+              GradientRoundedButtonWidget(
                 buttonText: 'Signup',
                 onpressed: () {
                   Get.to(SignupView());

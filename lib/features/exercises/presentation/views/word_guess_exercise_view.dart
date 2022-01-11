@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:polygot_app/features/authentication/presentation/widgets/custom_text_input_form_field.dart';
-import 'package:polygot_app/shared/widgets/rounded_button.dart';
+import '../widgets/letter_button.dart';
+import '../../../authentication/presentation/widgets/custom_text_input_form_field.dart';
+import '../../../../shared/widgets/rounded_button.dart';
 
 class WordExerciseView extends StatelessWidget {
   const WordExerciseView({Key? key}) : super(key: key);
@@ -129,7 +130,7 @@ class WordExerciseView extends StatelessWidget {
               const SizedBox(
                 height: 10.0,
               ),
-              RoundedButtonWidget(
+              GradientRoundedButtonWidget(
                 buttonText: 'Validate',
                 onpressed: () {},
                 width: 348,
@@ -174,37 +175,6 @@ class WordExerciseView extends StatelessWidget {
               ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class LetterButton extends StatelessWidget {
-  final String letter;
-  const LetterButton({
-    Key? key,
-    required this.letter,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 80.0,
-      height: 50.0,
-      // padding: const EdgeInsets.all(0),
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.white54,
-          ),
-          borderRadius: BorderRadius.circular(4.0)),
-      child: TextButton(
-        onPressed: () {},
-        child: Text(
-          letter,
-          style: TextStyle(
-              color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
         ),
       ),
     );

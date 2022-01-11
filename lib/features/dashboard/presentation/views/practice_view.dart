@@ -2,6 +2,9 @@ import 'package:fluid_bottom_nav_bar/fluid_bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
+import '../widgets/priority_selection_widget.dart';
+import '../widgets/word_length_selection_widget.dart';
+
 class PracticeView extends StatelessWidget {
   const PracticeView({Key? key}) : super(key: key);
 
@@ -147,20 +150,6 @@ class PracticeView extends StatelessWidget {
           barBackgroundColor: Colors.white10,
           // iconBackgroundColor: Color(0xFFBC78F1),
         ),
-        // itemBuilder: (icon, item) {
-        //   return Container(
-        //       decoration: BoxDecoration(
-        //           shape: BoxShape.circle,
-        //           gradient: LinearGradient(
-        //               begin: Alignment.topRight,
-        //               end: Alignment.bottomLeft,
-        //               colors: [
-        //                 Color(0xFFBC78F1),
-        //                 Color(0xFF2ECCA7),
-        //               ])),
-        //       child: item);
-        // },
-
         animationFactor: 0.3,
         icons: [
           FluidNavBarIcon(icon: Icons.checklist),
@@ -169,118 +158,6 @@ class PracticeView extends StatelessWidget {
           FluidNavBarIcon(
             icon: Icons.dashboard,
             // backgroundColor: LinearGradient(colors: )
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class WordLengthSelectionWidget extends StatelessWidget {
-  final String wordLength;
-  final String wordCount;
-  final Color wordCountColor;
-  final isPremium;
-  const WordLengthSelectionWidget({
-    Key? key,
-    required this.wordLength,
-    required this.wordCount,
-    this.wordCountColor = Colors.white,
-    this.isPremium = false,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          width: 100,
-          height: 100,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8.0),
-              border: Border.all(color: Colors.white24),
-              color: Colors.white10),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                wordLength,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 13),
-              ),
-              Text(
-                wordCount,
-                style: TextStyle(
-                    color: wordCountColor,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 24),
-              ),
-              Text(
-                'words',
-                style: TextStyle(
-                    color: Colors.white30,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 13),
-              ),
-            ],
-          ),
-        ),
-        const SizedBox(
-          height: 8.0,
-        ),
-        if (isPremium)
-          Text(
-            'Premium',
-            style: TextStyle(
-                color: Color(0xFFEABE4E),
-                fontWeight: FontWeight.w600,
-                fontSize: 13),
-          ),
-      ],
-    );
-  }
-}
-
-class PrioritySelectionWidget extends StatelessWidget {
-  final String text;
-  final bool isSelected;
-  const PrioritySelectionWidget({
-    Key? key,
-    this.isSelected = false,
-    required this.text,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      // width: 344,
-      height: 40,
-      padding: const EdgeInsets.symmetric(horizontal: 12.0),
-      decoration: BoxDecoration(
-          border: Border.all(color: Colors.white30),
-          color: Colors.white12,
-          borderRadius: BorderRadius.circular(8.0)),
-      child: Row(
-        children: [
-          Container(
-            height: 12.0,
-            width: 12.0,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: isSelected ? Color(0xFFA5A6F6) : null,
-              border: Border.all(color: Colors.white38),
-            ),
-          ),
-          const SizedBox(
-            width: 16.0,
-          ),
-          Text(
-            text,
-            style: TextStyle(
-                color: Colors.white, fontWeight: FontWeight.w600, fontSize: 17),
           ),
         ],
       ),

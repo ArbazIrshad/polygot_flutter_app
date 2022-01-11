@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/src/snackbar/snackbar.dart';
 import 'package:outline_gradient_button/outline_gradient_button.dart';
+import '../widgets/custom_outline_gradient_button.dart';
+import '../widgets/custom_rounded_outline_gradient_button.dart';
 
 class SectionView extends StatelessWidget {
   const SectionView({Key? key}) : super(key: key);
@@ -85,6 +86,7 @@ class SectionView extends StatelessWidget {
                 height: 50.0,
                 // width: 324,
                 child: TextField(
+                  textAlign: TextAlign.end,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12.0),
@@ -96,6 +98,7 @@ class SectionView extends StatelessWidget {
                         borderSide: BorderSide(color: Colors.white10)),
                     hintText: 'Search with category or words',
                     hintStyle: TextStyle(
+                        // align
                         color: Color(0xFF8F9BB3).withOpacity(0.54),
                         fontSize: 16.0),
                     // filled: true,
@@ -106,6 +109,7 @@ class SectionView extends StatelessWidget {
                       iconSize: 26,
                       color: Colors.white54,
                     ),
+                    // alignLabelWithHint: true,
 
                     suffixIcon: IconButton(
                       onPressed: () {},
@@ -257,87 +261,6 @@ class SectionView extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class CustomRoundedOutlineGradientButton extends StatelessWidget {
-  final String text;
-  final List<Color> colors;
-  const CustomRoundedOutlineGradientButton({
-    Key? key,
-    required this.text,
-    required this.colors,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return OutlineGradientButton(
-      child: SizedBox(
-        width: 80,
-        height: 80,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(text,
-                style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white)),
-            // Icon(Icons.opacity, color: Colors.grey, size: 24),
-          ],
-        ),
-      ),
-      gradient: LinearGradient(
-        colors: colors,
-        begin: Alignment.topCenter,
-        end: Alignment.bottomRight,
-      ),
-      strokeWidth: 2.0,
-      padding: EdgeInsets.zero,
-      radius: Radius.circular(40),
-    );
-  }
-}
-
-class CustomOulineGradientButton extends StatelessWidget {
-  final String text;
-  final VoidCallback onTap;
-  final List<Color> colors;
-  final double height;
-  final double? width;
-  const CustomOulineGradientButton({
-    Key? key,
-    required this.text,
-    required this.onTap,
-    required this.colors,
-    this.height = 56,
-    this.width,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: height,
-      width: width,
-      // alignment: Alignment.center,
-      child: OutlineGradientButton(
-          onTap: onTap,
-          child: Center(
-            child: Text(
-              text,
-              // textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 14, color: Colors.white),
-            ),
-          ),
-          strokeWidth: 2.0,
-          radius: Radius.circular(8.0),
-          backgroundColor: Colors.white.withOpacity(0.05),
-          gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomRight,
-              colors: colors)),
     );
   }
 }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:polygot_app/shared/widgets/rounded_button.dart';
+import '../widgets/selected_word_widget.dart';
+import '../../../../shared/widgets/rounded_button.dart';
 
 class SelectErrorsExerciseView extends StatelessWidget {
   const SelectErrorsExerciseView({Key? key}) : super(key: key);
@@ -148,7 +149,7 @@ class SelectErrorsExerciseView extends StatelessWidget {
               const SizedBox(
                 height: 10.0,
               ),
-              RoundedButtonWidget(
+              GradientRoundedButtonWidget(
                 buttonText: 'Validate',
                 onpressed: () {
                   Get.dialog(Dialog(
@@ -185,7 +186,7 @@ class SelectErrorsExerciseView extends StatelessWidget {
                                 fontWeight: FontWeight.w600,
                                 fontSize: 17),
                           ),
-                          RoundedButtonWidget(
+                          GradientRoundedButtonWidget(
                             buttonText: 'Close',
                             onpressed: () => Get.back(),
                             width: 240,
@@ -242,33 +243,6 @@ class SelectErrorsExerciseView extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class SelectedWordWidget extends StatelessWidget {
-  final String text;
-  const SelectedWordWidget({
-    Key? key,
-    required this.text,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsetsDirectional.only(end: 8.0),
-      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 2.0),
-      alignment: Alignment.center,
-      height: 36.0,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8.0),
-        border: Border.all(color: Color(0xFFFF6978)),
-      ),
-      child: Text(
-        text,
-        style: TextStyle(
-            color: Colors.white, fontSize: 17, fontWeight: FontWeight.w600),
       ),
     );
   }

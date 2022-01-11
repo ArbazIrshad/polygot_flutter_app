@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class RoundedButtonWidget extends StatelessWidget {
+class GradientRoundedButtonWidget extends StatelessWidget {
   final String buttonText;
   final double width;
   final Function onpressed;
@@ -9,7 +9,7 @@ class RoundedButtonWidget extends StatelessWidget {
   final AlignmentGeometry end;
   final List<double>? stops;
 
-  const RoundedButtonWidget({
+  const GradientRoundedButtonWidget({
     required this.buttonText,
     required this.width,
     required this.onpressed,

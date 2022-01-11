@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:polygot_app/shared/widgets/rounded_button.dart';
 
-class SelectErrorsExerciseView extends StatelessWidget {
-  const SelectErrorsExerciseView({Key? key}) : super(key: key);
+import '../../../../shared/widgets/rounded_button.dart';
+import '../widgets/word_tile_widget.dart';
+
+class CompleteScentenceExerciseView extends StatelessWidget {
+  const CompleteScentenceExerciseView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -144,7 +146,7 @@ class SelectErrorsExerciseView extends StatelessWidget {
               const SizedBox(
                 height: 10.0,
               ),
-              RoundedButtonWidget(
+              GradientRoundedButtonWidget(
                 buttonText: 'Validate',
                 onpressed: () {},
                 width: 348,
@@ -190,38 +192,6 @@ class SelectErrorsExerciseView extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class WordTileWidget extends StatelessWidget {
-  final String text;
-  const WordTileWidget({
-    Key? key,
-    required this.text,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsetsDirectional.only(end: 8.0),
-      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 2.0),
-      alignment: Alignment.center,
-      height: 44.0,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12.0),
-          border: Border.all(color: Colors.white38),
-          gradient: LinearGradient(
-            colors: [
-              Colors.white.withOpacity(0.05),
-              Color(0xFFC4C4C4).withOpacity(0.02)
-            ],
-          )),
-      child: Text(
-        text,
-        style: TextStyle(
-            color: Colors.white, fontSize: 17, fontWeight: FontWeight.w600),
       ),
     );
   }

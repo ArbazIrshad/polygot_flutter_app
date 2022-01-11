@@ -1,8 +1,11 @@
 import 'package:auth_buttons/auth_buttons.dart';
 import 'package:flutter/material.dart';
-import 'package:polygot_app/features/authentication/presentation/widgets/custom_text_input_form_field.dart';
-import 'package:polygot_app/features/authentication/presentation/widgets/or_divider.dart';
-import 'package:polygot_app/shared/widgets/rounded_button.dart';
+import 'package:get/get.dart';
+import 'signup_view.dart';
+import '../../../daily_review/presentation/views/daily_review_dialog.dart';
+import '../widgets/custom_text_input_form_field.dart';
+import '../widgets/or_divider.dart';
+import '../../../../shared/widgets/rounded_button.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -40,6 +43,7 @@ class LoginView extends StatelessWidget {
             ),
             Text(
               'Please fill your credentials to continue',
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: 16.0,
@@ -76,9 +80,11 @@ class LoginView extends StatelessWidget {
             const SizedBox(
               height: 10.0,
             ),
-            RoundedButtonWidget(
+            GradientRoundedButtonWidget(
               buttonText: 'Log-In',
-              onpressed: () {},
+              onpressed: () {
+                Get.to(DailyReviewDialog());
+              },
               colors: [
                 Color(0xFFBAF7FF),
                 Color(0xFF0085FF),
@@ -86,7 +92,9 @@ class LoginView extends StatelessWidget {
               width: 344,
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.to(SignupView());
+              },
               child: Text(
                 'Don\'t have an account yet?',
                 style: TextStyle(
@@ -103,7 +111,6 @@ class LoginView extends StatelessWidget {
             const SizedBox(
               height: 12.0,
             ),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -131,24 +138,6 @@ class LoginView extends StatelessWidget {
                 ),
               ],
             ),
-            // TextField(
-            //   onEditingComplete: () {},
-            //   decoration: const InputDecoration(
-            //     hintText: '',
-            //     hintStyle: TextStyle(color: Colors.white60),
-            //     // fillColor: Colors.transparent,
-            //     enabledBorder: OutlineInputBorder(
-            //       borderSide: BorderSide(
-            //         color: Colors.white24,
-            //       ),
-            //     ),
-            //     focusedBorder: OutlineInputBorder(
-            //       borderSide: BorderSide(
-            //         color: Colors.white24,
-            //       ),
-            //     ),
-            //   ),
-            // ),
           ],
         ),
       ),

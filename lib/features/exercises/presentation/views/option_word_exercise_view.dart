@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:polygot_app/features/authentication/presentation/widgets/custom_text_input_form_field.dart';
-import 'package:polygot_app/shared/widgets/rounded_button.dart';
+import '../../../authentication/presentation/widgets/custom_text_input_form_field.dart';
+import '../../../../shared/widgets/rounded_button.dart';
 
 const placeholderList = ['Good', 'Bad', 'New'];
 
@@ -130,7 +130,7 @@ class OptionWordExerciseView extends StatelessWidget {
               const SizedBox(
                 height: 10.0,
               ),
-              RoundedButtonWidget(
+              GradientRoundedButtonWidget(
                 buttonText: 'Validate',
                 onpressed: () {},
                 width: 348,

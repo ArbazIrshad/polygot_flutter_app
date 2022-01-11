@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/expansion_setting_tile_widget.dart';
+
 class ExpansionTileElement {
   final String leadingText;
   final String trailingText;
@@ -71,8 +73,13 @@ class _SettingsViewState extends State<SettingsView> {
         height: MediaQuery.of(context).size.height,
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         decoration: BoxDecoration(
-            gradient:
-                LinearGradient(colors: [Color(0xFF2B2E5D), Color(0xFF282F54)])),
+          gradient: LinearGradient(
+            colors: [
+              Color(0xFF2B2E5D),
+              Color(0xFF282F54),
+            ],
+          ),
+        ),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -331,11 +338,7 @@ class _ExpandedSettingPanelState extends State<ExpandedSettingPanel> {
           ? BoxDecoration(
               borderRadius: BorderRadius.circular(12.0),
               border: Border.all(color: Colors.white10),
-              color: Colors.white.withOpacity(0.05)
-              // gradient: LinearGradient(
-              //   colors: [Colors.white, Colors.white.withOpacity(0.0)],
-              // ),
-              )
+              color: Colors.white.withOpacity(0.05))
           : null,
       child: Theme(
         data: ThemeData().copyWith(dividerColor: Colors.transparent),
@@ -363,44 +366,7 @@ class _ExpandedSettingPanelState extends State<ExpandedSettingPanel> {
                   fontSize: 17,
                   fontWeight: FontWeight.w600),
             ),
-            children: widget.elementList
-            // elementList
-            //     .map((e) => Container(
-            //         margin: const EdgeInsets.only(bottom: 4.0),
-            //         child: ExpansionTileChildWidget(
-            //           leadingText: e.leadingText,
-            //           trailingText: e.trailingText,
-            //           children: children,
-            //         )))
-            //     .toList()
-            ),
-      ),
-    );
-  }
-}
-
-class ExpandedSettingTileWidget extends StatelessWidget {
-  final List<Widget> children;
-  const ExpandedSettingTileWidget({
-    Key? key,
-    required this.children,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10.0),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12.0),
-          border: Border.all(color: Colors.white10),
-          color: Colors.white.withOpacity(0.05)
-          // gradient: LinearGradient(
-          //   colors: [Colors.white, Colors.white.withOpacity(0.0)],
-          // ),
-          ),
-      height: 38.0,
-      child: Row(
-        children: children,
+            children: widget.elementList),
       ),
     );
   }

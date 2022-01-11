@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:get/get.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:polygot_app/shared/widgets/rounded_button.dart';
+import '../../../authentication/presentation/views/study_mode_selection_view.dart';
+import '../../../dashboard/presentation/views/section_view.dart';
+import '../../../../shared/widgets/rounded_button.dart';
 
 const placeholderList = ['Good', 'Bad', 'New'];
 
@@ -17,9 +20,7 @@ class DailyReviewView extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            // stops: [0.1, 0.4, 0.9],
             colors: [
-              // const Color(0xffFF9A5E).withOpacity(0.8),
               Color(0xFF5EC5FF),
               Color(0xFF282F54),
               Color(0xFF172155),
@@ -54,24 +55,16 @@ class DailyReviewView extends StatelessWidget {
             Container(
               width: 344,
               height: 150,
-              // padding: const EdgeInsets.symmetric(horizontal: 25.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12.0),
                 border: Border.all(color: Colors.white38, width: 0.5),
                 gradient: LinearGradient(
-                  // begin: Alignment.topCenter,
-                  // end: Alignment.bottomCenter,
-                  // stops: [0.1, 0.4, 0.9],
                   colors: [
-                    // const Color(0xffFF9A5E).withOpacity(0.8),
                     Colors.white.withOpacity(0.05),
                     Color(0xFFC4C4C4).withOpacity(0.02)
-                    // Colors.white,
-                    // Colors.white.withOpacity(0.0)
                   ],
                 ),
               ),
-
               child: ListView.separated(
                   physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (ctx, index) => Padding(
@@ -104,10 +97,10 @@ class DailyReviewView extends StatelessWidget {
             SizedBox(
               height: 16,
             ),
-            RoundedButtonWidget(
+            GradientRoundedButtonWidget(
               buttonText: 'Continue',
               onpressed: () {
-                // Get.to(StudyModeSelectionView());
+                Get.to(SectionView());
               },
               width: 500,
               colors: const [

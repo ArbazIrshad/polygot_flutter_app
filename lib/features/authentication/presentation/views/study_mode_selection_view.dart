@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:polygot_app/shared/widgets/rounded_button.dart';
+
+import '../../../../shared/widgets/rounded_button.dart';
+import '../widgets/mode_selection_tile_widget.dart';
 
 class StudyModeSelectionView extends StatelessWidget {
   const StudyModeSelectionView({Key? key}) : super(key: key);
@@ -13,11 +15,8 @@ class StudyModeSelectionView extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            // stops: [0.0, 0.01, 0.02, 0.25, 0.9],
             colors: [
-              // Color(0xffB7EEF2),
               const Color(0xffFF9A5E).withOpacity(0.8),
-              // Color(0xffFF9A5E),
               const Color(0xff282F54),
               const Color(0xFF172155),
             ],
@@ -42,23 +41,23 @@ class StudyModeSelectionView extends StatelessWidget {
               crossAxisCount: 2,
               childAspectRatio: 1.1,
               children: [
-                ModeSelectionTile(
+                ModeSelectionTileWidget(
                   imageAssetPath: 'assets/images/school.png',
                   text: 'School',
                 ),
-                ModeSelectionTile(
+                ModeSelectionTileWidget(
                   imageAssetPath: 'assets/images/travel.png',
                   text: 'Travel',
                 ),
-                ModeSelectionTile(
+                ModeSelectionTileWidget(
                   imageAssetPath: 'assets/images/hobby.png',
                   text: 'Hobby',
                 ),
-                ModeSelectionTile(
+                ModeSelectionTileWidget(
                   imageAssetPath: 'assets/images/work.png',
                   text: 'Work',
                 ),
-                ModeSelectionTile(
+                ModeSelectionTileWidget(
                   imageAssetPath: 'assets/images/language_prof.png',
                   text: 'Language Proficiency',
                 ),
@@ -67,7 +66,7 @@ class StudyModeSelectionView extends StatelessWidget {
             const SizedBox(
               height: 12.0,
             ),
-            RoundedButtonWidget(
+            GradientRoundedButtonWidget(
               onpressed: () {},
               buttonText: 'Next',
               width: 342,
@@ -81,47 +80,6 @@ class StudyModeSelectionView extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class ModeSelectionTile extends StatelessWidget {
-  final String imageAssetPath;
-  final String text;
-  const ModeSelectionTile({
-    Key? key,
-    required this.imageAssetPath,
-    required this.text,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 160,
-      height: 196,
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Colors.white10,
-              Colors.white12,
-            ],
-          ),
-          borderRadius: BorderRadius.circular(12.0)),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Image.asset(imageAssetPath),
-          Text(
-            text,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                fontWeight: FontWeight.w600, fontSize: 15, color: Colors.white),
-          )
-        ],
       ),
     );
   }

@@ -123,22 +123,7 @@ class ReviewView extends StatelessWidget {
         style: FluidNavBarStyle(
           iconSelectedForegroundColor: Colors.white,
           barBackgroundColor: Colors.white10,
-          // iconBackgroundColor: Color(0xFFBC78F1),
         ),
-        // itemBuilder: (icon, item) {
-        //   return Container(
-        //       decoration: BoxDecoration(
-        //           shape: BoxShape.circle,
-        //           gradient: LinearGradient(
-        //               begin: Alignment.topRight,
-        //               end: Alignment.bottomLeft,
-        //               colors: [
-        //                 Color(0xFFBC78F1),
-        //                 Color(0xFF2ECCA7),
-        //               ])),
-        //       child: item);
-        // },
-
         animationFactor: 0.3,
         icons: [
           FluidNavBarIcon(icon: Icons.checklist),
@@ -146,7 +131,6 @@ class ReviewView extends StatelessWidget {
           FluidNavBarIcon(icon: Icons.list_outlined),
           FluidNavBarIcon(
             icon: Icons.dashboard,
-            // backgroundColor: LinearGradient(colors: )
           ),
         ],
       ),
