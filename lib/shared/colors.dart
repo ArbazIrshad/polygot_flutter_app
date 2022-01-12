@@ -1,8 +1,18 @@
-import 'dart:ui';
+import 'package:flutter/material.dart';
 
-const color1 = Color(0xFF5EC5FF);
-const color2 = Color(0xFF282F54);
-const color3 = Color(0xFF172155);
+class LightPinkButtonGradientWithAlignment {
+  static const List<Color> colors = [
+    Color(0x9946F2FF),
+    Color(0x99F457CA),
+  ];
+
+  static const beginAlignment = Alignment(0, -4);
+  static const endAlignment = Alignment(0, 0.5);
+}
+
+// const color1 = Color(0xFF5EC5FF);
+// const color2 = Color(0xFF282F54);
+// const color3 = Color(0xFF172155);
 
               // Color(0xffFF9A5E),
               // Color(0xff282F54),

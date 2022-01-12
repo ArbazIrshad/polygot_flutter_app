@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class CustomTextInputFormField extends StatelessWidget {
   final String? text;
   final VoidCallback? onCompleted;
+  final Widget? suffix;
 
   final double? height;
   final double? width;
@@ -13,6 +14,7 @@ class CustomTextInputFormField extends StatelessWidget {
     this.onCompleted,
     this.height,
     this.width,
+    this.suffix,
   }) : super(key: key);
 
   @override
@@ -31,6 +33,7 @@ class CustomTextInputFormField extends StatelessWidget {
             color: Colors.white24,
           ),
         ),
+        suffixIcon: suffix,
         focusedBorder: const OutlineInputBorder(
           borderSide: BorderSide(
             color: Colors.white24,

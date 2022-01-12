@@ -18,7 +18,11 @@ class OrDivider extends StatelessWidget {
         ),
         Container(
             margin: const EdgeInsets.symmetric(horizontal: 10),
-            child: const Text('or')),
+            child: const Text(
+              'or',
+              style:
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+            )),
         Expanded(
             child: Divider(
           thickness: 1,

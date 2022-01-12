@@ -108,8 +108,8 @@ class DailyReviewView extends StatelessWidget {
                 Color.fromRGBO(244, 87, 202, 1.0),
                 // Colors.deepPurple.shade200,
               ],
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
+              begin: Alignment(0, -3),
+              end: Alignment(0, 1),
             ),
             SizedBox(
               height: 16,

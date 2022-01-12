@@ -68,61 +68,61 @@ class DailyPracticeSelectionWidget extends StatelessWidget {
                 const SizedBox(
                   width: 4.0,
                 ),
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      // mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          practiceLength,
-                          style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 17.0,
-                              color: Colors.white),
-                        ),
-                        const SizedBox(
-                          width: 12.0,
-                        ),
-                        Text(
-                          '$wordCount Words',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 13.0,
-                              color: Colors.white70),
-                        ),
-                        const SizedBox(
-                          width: 84.0,
-                        ),
-                        if (isPremium)
-                          RichText(
-                              text: TextSpan(
-                                  style: TextStyle(
-                                      color: Colors.orangeAccent[400],
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 12.0),
-                                  children: [
-                                TextSpan(text: 'Premium'),
-                                WidgetSpan(
-                                    child: Icon(
-                                  Icons.star,
-                                  color: Colors.orangeAccent[400],
-                                  size: 12,
-                                ))
-                              ])),
-                      ],
-                    ),
-                    LinearPercentIndicator(
-                      percent: percent,
-                      width: 274,
-                      lineHeight: 9.0,
-                      padding: EdgeInsets.symmetric(horizontal: 4.0),
-                      progressColor: color,
-                      backgroundColor: Color(0xFFC4C4C4).withOpacity(0.32),
-                    )
-                  ],
+                Expanded(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        // mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            practiceLength,
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 17.0,
+                                color: Colors.white),
+                          ),
+                          const SizedBox(
+                            width: 12.0,
+                          ),
+                          Text(
+                            '$wordCount Words',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 13.0,
+                                color: Colors.white70),
+                          ),
+                          const Spacer(),
+                          if (isPremium)
+                            RichText(
+                                text: TextSpan(
+                                    style: TextStyle(
+                                        color: Colors.orangeAccent[400],
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 12.0),
+                                    children: [
+                                  TextSpan(text: 'Premium'),
+                                  WidgetSpan(
+                                      child: Icon(
+                                    Icons.star,
+                                    color: Colors.orangeAccent[400],
+                                    size: 12,
+                                  ))
+                                ])),
+                        ],
+                      ),
+                      LinearPercentIndicator(
+                        percent: percent,
+                        // width: context.size?.width,
+                        lineHeight: 9.0,
+                        padding: EdgeInsets.symmetric(horizontal: 4.0),
+                        progressColor: color,
+                        backgroundColor: Color(0xFFC4C4C4).withOpacity(0.32),
+                      )
+                    ],
+                  ),
                 )
               ],
             ),

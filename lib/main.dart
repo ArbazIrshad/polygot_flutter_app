@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:polygot_app/features/authentication/presentation/views/language_selection_view.dart';
+import 'package:polygot_app/features/authentication/presentation/views/welcome_view.dart';
+import 'package:polygot_app/features/dashboard/presentation/views/practice_view.dart';
 
 import 'features/authentication/presentation/views/login_view.dart';
 import 'shared/themes.dart';
@@ -16,7 +19,7 @@ class PolygotApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'PolyGotApp',
       debugShowCheckedModeBanner: false,
-      home: SafeArea(child: LoginView()),
+      home: LanguageSelectionView(),
       theme: CustomTheme.darkTheme,
     );
   }

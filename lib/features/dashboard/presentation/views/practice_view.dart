@@ -1,6 +1,8 @@
 import 'package:fluid_bottom_nav_bar/fluid_bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:polygot_app/shared/colors.dart';
+import 'package:polygot_app/shared/widgets/rounded_button.dart';
 
 import '../widgets/priority_selection_widget.dart';
 import '../widgets/word_length_selection_widget.dart';
@@ -140,6 +142,20 @@ class PracticeView extends StatelessWidget {
                   isPremium: true,
                 ),
               ],
+            ),
+            Container(
+              alignment: Alignment.center,
+              margin: const EdgeInsets.symmetric(vertical: 8.0),
+              child: GradientRoundedButtonWidget(
+                buttonText: 'Start',
+                onpressed: () {
+                  // Get.to(LanguageSelectionView());
+                },
+                colors: LightPinkButtonGradientWithAlignment.colors,
+                begin: LightPinkButtonGradientWithAlignment.beginAlignment,
+                end: LightPinkButtonGradientWithAlignment.endAlignment,
+                width: 342,
+              ),
             ),
           ],
         ),
