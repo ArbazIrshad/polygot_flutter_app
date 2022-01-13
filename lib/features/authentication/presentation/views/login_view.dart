@@ -15,6 +15,7 @@ class LoginView extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Container(
+          height: Get.height,
           padding: const EdgeInsets.symmetric(horizontal: 25.0),
           decoration: const BoxDecoration(
             gradient: LinearGradient(
@@ -28,120 +29,124 @@ class LoginView extends StatelessWidget {
               ],
             ),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(
-                height: 36.0,
-              ),
-              const Text(
-                'Welcome Back!',
-                style: TextStyle(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(
+                  height: 36.0,
+                ),
+                const Text(
+                  'Welcome Back!',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 32.0,
+                      color: Colors.white),
+                ),
+                Text(
+                  'Please fill your credentials to continue',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
                     fontWeight: FontWeight.w600,
-                    fontSize: 32.0,
-                    color: Colors.white),
-              ),
-              Text(
-                'Please fill your credentials to continue',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16.0,
-                  color: Colors.white.withOpacity(0.72),
-                ),
-              ),
-              const SizedBox(
-                height: 125.0,
-              ),
-              CustomTextInputFormField(
-                width: 344.0,
-                height: 48.0,
-                text: 'Username',
-              ),
-              const SizedBox(
-                height: 16.0,
-              ),
-              CustomTextInputFormField(
-                text: 'Password',
-                width: 344.0,
-                height: 48.0,
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  'Forgot password?',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15,
-                    color: Color(0xFFF2C94C),
+                    fontSize: 16.0,
+                    color: Colors.white.withOpacity(0.72),
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 10.0,
-              ),
-              GradientRoundedButtonWidget(
-                buttonText: 'Log-In',
-                onpressed: () {
-                  Get.to(DailyReviewDialog());
-                },
-                colors: [
-                  Color(0xFFBAF7FF).withOpacity(0.6),
-                  Color(0xFF0085FF).withOpacity(0.6),
-                ],
-                begin: Alignment(0, -3),
-                end: Alignment(0, 1),
-                width: 344,
-              ),
-              TextButton(
-                onPressed: () {
-                  Get.to(SignupView());
-                },
-                child: Text(
-                  'Don\'t have an account yet?',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15,
-                    color: Colors.white,
-                  ),
+                const SizedBox(
+                  height: 125.0,
                 ),
-              ),
-              const SizedBox(
-                height: 12.0,
-              ),
-              OrDivider(),
-              const SizedBox(
-                height: 12.0,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FacebookAuthButton(
-                    style: AuthButtonStyle(buttonType: AuthButtonType.icon),
-                    onPressed: () {},
-                  ),
-                  const SizedBox(
-                    width: 16.0,
-                  ),
-                  AppleAuthButton(
-                    style: AuthButtonStyle(
-                      buttonType: AuthButtonType.icon,
-                      buttonColor: Colors.black,
-                      iconColor: Colors.white,
+                CustomTextInputFormField(
+                  width: 344.0,
+                  height: 48.0,
+                  text: 'Username',
+                ),
+                const SizedBox(
+                  height: 16.0,
+                ),
+                CustomTextInputFormField(
+                  text: 'Password',
+                  width: 344.0,
+                  height: 48.0,
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Forgot password?',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      color: Color(0xFFF2C94C),
                     ),
-                    onPressed: () {},
                   ),
-                  const SizedBox(
-                    width: 16.0,
+                ),
+                const SizedBox(
+                  height: 10.0,
+                ),
+                GradientRoundedButtonWidget(
+                  buttonText: 'Log-In',
+                  onpressed: () {
+                    Get.to(DailyReviewDialog());
+                  },
+                  colors: [
+                    Color(0xFFBAF7FF).withOpacity(0.6),
+                    Color(0xFF0085FF).withOpacity(0.6),
+                  ],
+                  begin: Alignment(0, -3),
+                  end: Alignment(0, 1),
+                  width: 344,
+                ),
+                TextButton(
+                  onPressed: () {
+                    Get.to(SignupView());
+                  },
+                  child: Text(
+                    'Don\'t have an account yet?',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      color: Colors.white,
+                    ),
                   ),
-                  GoogleAuthButton(
-                    style: AuthButtonStyle(buttonType: AuthButtonType.icon),
-                    onPressed: () {},
-                  ),
-                ],
-              ),
-            ],
+                ),
+                const SizedBox(
+                  height: 12.0,
+                ),
+                OrDivider(),
+                const SizedBox(
+                  height: 12.0,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    FacebookAuthButton(
+                      style: AuthButtonStyle(
+                          buttonType: AuthButtonType.icon, iconSize: 24.0),
+                      onPressed: () {},
+                    ),
+                    const SizedBox(
+                      width: 16.0,
+                    ),
+                    AppleAuthButton(
+                      style: AuthButtonStyle(
+                          buttonType: AuthButtonType.icon,
+                          buttonColor: Colors.black,
+                          iconColor: Colors.white,
+                          iconSize: 24),
+                      onPressed: () {},
+                    ),
+                    const SizedBox(
+                      width: 16.0,
+                    ),
+                    GoogleAuthButton(
+                      style: AuthButtonStyle(
+                          buttonType: AuthButtonType.icon, iconSize: 24),
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

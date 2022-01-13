@@ -49,6 +49,7 @@ class DailyReviewDialog extends StatelessWidget {
             ),
             Container(
               // width: 357,
+
               height: 236,
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               decoration: BoxDecoration(
@@ -60,6 +61,7 @@ class DailyReviewDialog extends StatelessWidget {
                 ),
               ),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   DailyPracticeSelectionWidget(
                     practiceLength: 'Short',

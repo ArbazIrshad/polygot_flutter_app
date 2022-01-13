@@ -15,6 +15,7 @@ class SignupView extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Container(
+          height: Get.size.height,
           padding: const EdgeInsets.symmetric(horizontal: 25.0),
           decoration: const BoxDecoration(
             gradient: LinearGradient(

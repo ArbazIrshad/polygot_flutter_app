@@ -19,7 +19,7 @@ class PolygotApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'PolyGotApp',
       debugShowCheckedModeBanner: false,
-      home: LanguageSelectionView(),
+      home: WelcomeView(),
       theme: CustomTheme.darkTheme,
     );
   }

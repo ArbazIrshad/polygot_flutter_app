@@ -31,6 +31,9 @@ class LanguageSelectionView extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
+                const SizedBox(
+                  height: 26.0,
+                ),
                 const Text(
                   'Target Language',
                   style: TextStyle(
@@ -38,6 +41,9 @@ class LanguageSelectionView extends StatelessWidget {
                     fontSize: 20.0,
                     color: Colors.white,
                   ),
+                ),
+                const SizedBox(
+                  height: 26.0,
                 ),
                 Stack(
                   children: [
@@ -57,6 +63,9 @@ class LanguageSelectionView extends StatelessWidget {
                     )
                   ],
                 ),
+                const SizedBox(
+                  height: 26.0,
+                ),
                 const Text(
                   'Why French?',
                   style: TextStyle(
@@ -65,21 +74,34 @@ class LanguageSelectionView extends StatelessWidget {
                     color: Color(0xFFF178B6),
                   ),
                 ),
+                const SizedBox(
+                  height: 26.0,
+                ),
                 Column(
                   children: [
                     LanguageTypeListItemWidget(
                         leadingText: 'M French',
                         trailingText: 'M',
+                        borderRadius: const BorderRadius.vertical(
+                          top: Radius.circular(4.0),
+                        ),
                         isSelected: true),
                     LanguageTypeListItemWidget(
                         leadingText: 'R French',
                         trailingText: 'R',
+                        borderRadius: BorderRadius.zero,
                         isSelected: false),
                     LanguageTypeListItemWidget(
                         leadingText: 'Canadian French',
                         trailingText: 'C',
+                        borderRadius: const BorderRadius.vertical(
+                          bottom: Radius.circular(4.0),
+                        ),
                         isSelected: false),
                   ],
+                ),
+                const SizedBox(
+                  height: 26.0,
                 ),
                 const Text(
                   'Your level',
@@ -89,11 +111,16 @@ class LanguageSelectionView extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
+                const SizedBox(
+                  height: 26.0,
+                ),
                 CarouselSlider(
                   options: CarouselOptions(
                       enlargeCenterPage: true,
+                      viewportFraction: 0.44,
                       enableInfiniteScroll: false,
-                      // height: 26.0,
+                      height: 30.0,
+                      initialPage: 1,
                       // reverse: true,
                       // disableCenter: true,
                       pageSnapping: false,
@@ -128,44 +155,9 @@ class LanguageSelectionView extends StatelessWidget {
                     ),
                   ],
                 ),
-                // RotatedBox(
-                //   quarterTurns: 3,
-                //   child: ListWheelScrollView(itemExtent: 20, children: [
-                //     RotatedBox(
-                //       quarterTurns: 1,
-                //       child: const Text(
-                //         'Intermediate',
-                //         style: TextStyle(
-                //           fontWeight: FontWeight.bold,
-                //           fontSize: 20.0,
-                //           color: Colors.white,
-                //         ),
-                //       ),
-                //     ),
-                //     RotatedBox(
-                //       quarterTurns: 1,
-                //       child: const Text(
-                //         'Intermediate',
-                //         style: TextStyle(
-                //           fontWeight: FontWeight.bold,
-                //           fontSize: 20.0,
-                //           color: Colors.white,
-                //         ),
-                //       ),
-                //     ),
-                //     RotatedBox(
-                //       quarterTurns: 1,
-                //       child: const Text(
-                //         'Intermediate',
-                //         style: TextStyle(
-                //           fontWeight: FontWeight.bold,
-                //           fontSize: 20.0,
-                //           color: Colors.white,
-                //         ),
-                //       ),
-                //     ),
-                //   ]),
-                // ),
+                const SizedBox(
+                  height: 26.0,
+                ),
                 GradientRoundedButtonWidget(
                   buttonText: 'Next',
                   onpressed: () {
@@ -175,6 +167,9 @@ class LanguageSelectionView extends StatelessWidget {
                   colors: LightPinkButtonGradientWithAlignment.colors,
                   begin: LightPinkButtonGradientWithAlignment.beginAlignment,
                   end: LightPinkButtonGradientWithAlignment.endAlignment,
+                ),
+                const SizedBox(
+                  height: 26.0,
                 ),
               ],
             ),

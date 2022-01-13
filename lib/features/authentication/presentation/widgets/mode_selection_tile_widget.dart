@@ -3,17 +3,21 @@ import 'package:flutter/material.dart';
 class ModeSelectionTileWidget extends StatelessWidget {
   final String imageAssetPath;
   final String text;
+  final double width;
+  final double height;
   const ModeSelectionTileWidget({
     Key? key,
     required this.imageAssetPath,
     required this.text,
+    this.width = 160,
+    this.height = 196,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 160,
-      height: 196,
+      width: width,
+      height: height,
       decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,

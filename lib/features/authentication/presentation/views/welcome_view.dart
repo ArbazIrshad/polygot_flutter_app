@@ -106,7 +106,11 @@ class WelcomeView extends StatelessWidget {
                         text: 'Facebook',
                         darkMode: false,
                         onPressed: () {},
-                        style: authBtnStyle,
+                        style: authBtnStyle.copyWith(
+                          iconSize: 24.0,
+                          textStyle: TextStyle(
+                              fontSize: 15.0, fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ),
                     const SizedBox(
@@ -119,7 +123,11 @@ class WelcomeView extends StatelessWidget {
                         style: authBtnStyle.copyWith(
                           buttonColor: Colors.black,
                           iconColor: Colors.white,
-                          textStyle: const TextStyle(color: Colors.white),
+                          iconSize: 24.0,
+                          textStyle: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                     )

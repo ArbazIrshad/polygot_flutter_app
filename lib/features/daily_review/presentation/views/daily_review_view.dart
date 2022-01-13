@@ -53,7 +53,7 @@ class DailyReviewView extends StatelessWidget {
               height: 30,
             ),
             Container(
-              width: 344,
+              width: Get.size.width,
               height: 150,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12.0),
@@ -114,15 +114,13 @@ class DailyReviewView extends StatelessWidget {
             SizedBox(
               height: 16,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 32.0),
-              child: LinearPercentIndicator(
-                percent: 0.7,
-                width: 274,
-                lineHeight: 14.0,
-                progressColor: Color(0xFF92C9FB),
-                backgroundColor: Color(0xFFC4C4C4).withOpacity(0.32),
-              ),
+            LinearPercentIndicator(
+              alignment: MainAxisAlignment.center,
+              percent: 0.7,
+              width: 274,
+              lineHeight: 14.0,
+              progressColor: Color(0xFF92C9FB),
+              backgroundColor: Color(0xFFC4C4C4).withOpacity(0.32),
             )
           ],
         ),
