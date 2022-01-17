@@ -10,6 +10,20 @@ class LightPinkButtonGradientWithAlignment {
   static const endAlignment = Alignment(0, 0.5);
 }
 
+const lightGray15 = Color(0x26C4C4C4);
+
+const leafGreen = Color(0xFF75FFA4);
+const lightPink = Color(0xFFFF6978);
+const darkBlue = Color(0xFF2B2E5D);
+const lightPurple = Color(0xFFC752E7);
+const lightPurple2 = Color(0xFFBC78F1);
+const lightPurple3 = Color(0xFFC262EB);
+
+const goldenYellow = Color(0xFFEABE4E);
+const goldenYellow2 = Color(0xFFFFBF54);
+const lightBrown = Color(0xFF7C5848);
+const redBlood = Color(0xFFDC4955);
+
 // const color1 = Color(0xFF5EC5FF);
 // const color2 = Color(0xFF282F54);
 // const color3 = Color(0xFF172155);

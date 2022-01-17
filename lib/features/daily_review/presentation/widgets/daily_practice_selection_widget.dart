@@ -31,7 +31,7 @@ class DailyPracticeSelectionWidget extends StatelessWidget {
           child: Container(
             // width: 343,
             height: 68,
-            padding: const EdgeInsets.symmetric(horizontal: 4.0),
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
             decoration: BoxDecoration(
               color: isSelected ? Colors.white12 : null,
               borderRadius: BorderRadius.circular(8.0),

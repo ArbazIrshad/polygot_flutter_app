@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:polygot_app/features/authentication/presentation/views/language_selection_view.dart';
 import 'package:polygot_app/features/authentication/presentation/views/welcome_view.dart';
+import 'package:polygot_app/features/dashboard/presentation/views/dashboard_view.dart';
+import 'package:polygot_app/features/dashboard/presentation/views/fav_word_review.dart';
 import 'package:polygot_app/features/dashboard/presentation/views/practice_view.dart';
+import 'package:polygot_app/features/exercises/presentation/views/option_word_exercise_view.dart';
+import 'package:polygot_app/features/exercises/presentation/views/wrong_word_selection_view.dart';
+import 'package:polygot_app/features/settings/presentation/views/premium_view.dart';
 
 import 'features/authentication/presentation/views/login_view.dart';
 import 'shared/themes.dart';
@@ -19,7 +24,7 @@ class PolygotApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'PolyGotApp',
       debugShowCheckedModeBanner: false,
-      home: WelcomeView(),
+      home: OptionWordExerciseView(),
       theme: CustomTheme.darkTheme,
     );
   }

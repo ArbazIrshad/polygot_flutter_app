@@ -55,6 +55,7 @@ class WordCategoryTileWidget extends StatelessWidget {
         if (percentComplete != null)
           Text(
             '$percentComplete%',
+            // textHeightBehavior: TextHeightBehavior(),
             style: TextStyle(
                 color: Colors.white38,
                 fontWeight: FontWeight.w500,

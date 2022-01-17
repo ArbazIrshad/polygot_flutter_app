@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:polygot_app/features/authentication/presentation/widgets/list_wheel_horizontal.dart';
 import 'package:polygot_app/shared/colors.dart';
 import 'study_mode_selection_view.dart';
 import '../widgets/language_type_list_item_widget.dart';
@@ -45,26 +47,121 @@ class LanguageSelectionView extends StatelessWidget {
                 const SizedBox(
                   height: 26.0,
                 ),
-                Stack(
-                  children: [
+                CarouselSlider(
+                  items: [
                     Container(
-                      height: 220,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      width: 116,
+                      height: 150,
+                      child: Stack(
                         children: [
-                          Image.asset('assets/images/japan.png'),
-                          Image.asset('assets/images/italy.png')
+                          Positioned(
+                            top: 8.0,
+                            left: 12.0,
+                            child: Text(
+                              'Japanese',
+                              // textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.white),
+                            ),
+                          ),
+                          Image.asset(
+                            'assets/images/languages/japanese.png',
+                          ),
                         ],
                       ),
                     ),
-                    Align(
-                      child: Image.asset('assets/images/french.png'),
-                      alignment: Alignment.topCenter,
-                    )
+                    Container(
+                      width: 116,
+                      height: 150,
+                      child: Stack(
+                        // alignment: Alignment.center,
+                        children: [
+                          Positioned(
+                            // alignment: Alignment.topCenter,
+                            top: 8.0,
+                            left: 20.0,
+                            child: Text(
+                              'French',
+                              // textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.white),
+                            ),
+                          ),
+                          Image.asset(
+                            'assets/images/languages/French.png',
+                            // height: 200,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      width: 116,
+                      height: 150,
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            top: 8.0,
+                            left: 24.0,
+                            child: Text(
+                              'Italian',
+                              // textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.white),
+                            ),
+                          ),
+                          Image.asset(
+                            'assets/images/languages/Italian.png',
+                          ),
+                        ],
+                      ),
+                    ),
+                    // Container(
+                    //   width: 116,
+                    //   height: 150,
+                    //   child: Image.asset('assets/images/languages/French.png'),
+                    // ),
+                    // Container(
+                    //   width: 116,
+                    //   height: 150,
+                    //   child: Image.asset('assets/images/languages/Italian.png'),
+                    // ),
                   ],
+                  options: CarouselOptions(
+                    enlargeCenterPage: true,
+                    pageSnapping: true,
+                    enableInfiniteScroll: false,
+                    viewportFraction: 0.3,
+                    initialPage: 1,
+                    // enlargeStrategy: CenterPageEnlargeStrategy.height,
+                  ),
                 ),
+                // Stack(
+                //   children: [
+                //     Container(
+                //       height: 220,
+                //       child: Row(
+                //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //         children: [
+                //           Image.asset('assets/images/japan.png'),
+                //           Image.asset('assets/images/italy.png')
+                //         ],
+                //       ),
+                //     ),
+                //     Align(
+                //       child: Image.asset('assets/images/french.png'),
+                //       alignment: Alignment.topCenter,
+                //     )
+                //   ],
+                // ),
+                // ListWheelScrollViewX(builder: builder, itemExtent: itemExtent, controller: controller, onSelectedItemChanged: onSelectedItemChanged),
                 const SizedBox(
-                  height: 26.0,
+                  height: 12.0,
                 ),
                 const Text(
                   'Why French?',
@@ -75,31 +172,31 @@ class LanguageSelectionView extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  height: 26.0,
+                  height: 50.0,
                 ),
-                Column(
-                  children: [
-                    LanguageTypeListItemWidget(
-                        leadingText: 'M French',
-                        trailingText: 'M',
-                        borderRadius: const BorderRadius.vertical(
-                          top: Radius.circular(4.0),
-                        ),
-                        isSelected: true),
-                    LanguageTypeListItemWidget(
-                        leadingText: 'R French',
-                        trailingText: 'R',
-                        borderRadius: BorderRadius.zero,
-                        isSelected: false),
-                    LanguageTypeListItemWidget(
-                        leadingText: 'Canadian French',
-                        trailingText: 'C',
-                        borderRadius: const BorderRadius.vertical(
-                          bottom: Radius.circular(4.0),
-                        ),
-                        isSelected: false),
-                  ],
-                ),
+                // Column(
+                //   children: [
+                //     LanguageTypeListItemWidget(
+                //         leadingText: 'M French',
+                //         trailingText: 'M',
+                //         borderRadius: const BorderRadius.vertical(
+                //           top: Radius.circular(4.0),
+                //         ),
+                //         isSelected: true),
+                //     LanguageTypeListItemWidget(
+                //         leadingText: 'R French',
+                //         trailingText: 'R',
+                //         borderRadius: BorderRadius.zero,
+                //         isSelected: false),
+                //     LanguageTypeListItemWidget(
+                //         leadingText: 'Canadian French',
+                //         trailingText: 'C',
+                //         borderRadius: const BorderRadius.vertical(
+                //           bottom: Radius.circular(4.0),
+                //         ),
+                //         isSelected: false),
+                //   ],
+                // ),
                 const SizedBox(
                   height: 26.0,
                 ),
@@ -121,9 +218,10 @@ class LanguageSelectionView extends StatelessWidget {
                       enableInfiniteScroll: false,
                       height: 30.0,
                       initialPage: 1,
+                      // enlargeStrategy: CenterPageEnlargeStrategy.height,
                       // reverse: true,
                       // disableCenter: true,
-                      pageSnapping: false,
+                      pageSnapping: true,
                       scrollDirection: Axis.horizontal),
                   items: [
                     Container(
@@ -156,7 +254,7 @@ class LanguageSelectionView extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 26.0,
+                  height: 50.0,
                 ),
                 GradientRoundedButtonWidget(
                   buttonText: 'Next',
