@@ -47,100 +47,180 @@ class LanguageSelectionView extends StatelessWidget {
                 const SizedBox(
                   height: 26.0,
                 ),
-                CarouselSlider(
-                  items: [
-                    Container(
-                      width: 116,
-                      height: 150,
-                      child: Stack(
-                        children: [
-                          Positioned(
-                            top: 8.0,
-                            left: 12.0,
-                            child: Text(
-                              'Japanese',
-                              // textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.white),
-                            ),
+                Container(
+                  height: 200.0,
+                  child: ListWheelScrollViewX(
+                      // useMagnifier: true,
+                      // magnification: 1.2,
+                      // clipBehavior: Clip.none,
+
+                      squeeze: 1.2,
+                      diameterRatio: 1.5,
+                      perspective: 0.005,
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        Container(
+                          width: 116,
+                          height: 150,
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                top: 8.0,
+                                left: 12.0,
+                                child: Text(
+                                  'Japanese',
+                                  // textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white),
+                                ),
+                              ),
+                              Image.asset(
+                                'assets/images/languages/japanese.png',
+                              ),
+                            ],
                           ),
-                          Image.asset(
-                            'assets/images/languages/japanese.png',
+                        ),
+                        Container(
+                          width: 116,
+                          height: 150,
+                          child: Stack(
+                            // alignment: Alignment.center,
+                            children: [
+                              Positioned(
+                                // alignment: Alignment.topCenter,
+                                top: 8.0,
+                                left: 20.0,
+                                child: Text(
+                                  'French',
+                                  // textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white),
+                                ),
+                              ),
+                              Image.asset(
+                                'assets/images/languages/French.png',
+                                // height: 200,
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      width: 116,
-                      height: 150,
-                      child: Stack(
-                        // alignment: Alignment.center,
-                        children: [
-                          Positioned(
-                            // alignment: Alignment.topCenter,
-                            top: 8.0,
-                            left: 20.0,
-                            child: Text(
-                              'French',
-                              // textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.white),
-                            ),
+                        ),
+                        Container(
+                          width: 116,
+                          height: 150,
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                top: 8.0,
+                                left: 24.0,
+                                child: Text(
+                                  'Italian',
+                                  // textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white),
+                                ),
+                              ),
+                              Image.asset(
+                                'assets/images/languages/Italian.png',
+                              ),
+                            ],
                           ),
-                          Image.asset(
-                            'assets/images/languages/French.png',
-                            // height: 200,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      width: 116,
-                      height: 150,
-                      child: Stack(
-                        children: [
-                          Positioned(
-                            top: 8.0,
-                            left: 24.0,
-                            child: Text(
-                              'Italian',
-                              // textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.white),
-                            ),
-                          ),
-                          Image.asset(
-                            'assets/images/languages/Italian.png',
-                          ),
-                        ],
-                      ),
-                    ),
-                    // Container(
-                    //   width: 116,
-                    //   height: 150,
-                    //   child: Image.asset('assets/images/languages/French.png'),
-                    // ),
-                    // Container(
-                    //   width: 116,
-                    //   height: 150,
-                    //   child: Image.asset('assets/images/languages/Italian.png'),
-                    // ),
-                  ],
-                  options: CarouselOptions(
-                    enlargeCenterPage: true,
-                    pageSnapping: true,
-                    enableInfiniteScroll: false,
-                    viewportFraction: 0.3,
-                    initialPage: 1,
-                    // enlargeStrategy: CenterPageEnlargeStrategy.height,
-                  ),
+                        ),
+                      ],
+                      itemExtent: 150,
+                      controller: FixedExtentScrollController(initialItem: 1),
+                      onSelectedItemChanged: (index) {}),
                 ),
+                // CarouselSlider(
+                //   items: [
+                //     Container(
+                //       width: 116,
+                //       height: 150,
+                //       child: Stack(
+                //         children: [
+                //           Positioned(
+                //             top: 8.0,
+                //             left: 12.0,
+                //             child: Text(
+                //               'Japanese',
+                //               // textAlign: TextAlign.center,
+                //               style: TextStyle(
+                //                   fontSize: 14,
+                //                   fontWeight: FontWeight.w600,
+                //                   color: Colors.white),
+                //             ),
+                //           ),
+                //           Image.asset(
+                //             'assets/images/languages/japanese.png',
+                //           ),
+                //         ],
+                //       ),
+                //     ),
+                //     Container(
+                //       width: 116,
+                //       height: 150,
+                //       child: Stack(
+                //         // alignment: Alignment.center,
+                //         children: [
+                //           Positioned(
+                //             // alignment: Alignment.topCenter,
+                //             top: 8.0,
+                //             left: 20.0,
+                //             child: Text(
+                //               'French',
+                //               // textAlign: TextAlign.center,
+                //               style: TextStyle(
+                //                   fontSize: 14,
+                //                   fontWeight: FontWeight.w600,
+                //                   color: Colors.white),
+                //             ),
+                //           ),
+                //           Image.asset(
+                //             'assets/images/languages/French.png',
+                //             // height: 200,
+                //           ),
+                //         ],
+                //       ),
+                //     ),
+                //     Container(
+                //       width: 116,
+                //       height: 150,
+                //       child: Stack(
+                //         children: [
+                //           Positioned(
+                //             top: 8.0,
+                //             left: 24.0,
+                //             child: Text(
+                //               'Italian',
+                //               // textAlign: TextAlign.center,
+                //               style: TextStyle(
+                //                   fontSize: 14,
+                //                   fontWeight: FontWeight.w600,
+                //                   color: Colors.white),
+                //             ),
+                //           ),
+                //           Image.asset(
+                //             'assets/images/languages/Italian.png',
+                //           ),
+                //         ],
+                //       ),
+                //     ),
+                //     // Container(
+                //   ],
+                //   options: CarouselOptions(
+                //     enlargeCenterPage: true,
+                //     pageSnapping: true,
+                //     enableInfiniteScroll: false,
+                //     viewportFraction: 0.3,
+                //     initialPage: 1,
+                //     // enlargeStrategy: CenterPageEnlargeStrategy.height,
+                //   ),
+                // ),
                 // Stack(
                 //   children: [
                 //     Container(

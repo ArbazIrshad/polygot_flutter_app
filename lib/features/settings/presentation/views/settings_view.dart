@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:polygot_app/features/dashboard/presentation/views/profile_view.dart';
+import 'package:polygot_app/features/settings/presentation/views/premium_view.dart';
 
 import '../widgets/expansion_setting_tile_widget.dart';
 
@@ -71,9 +74,11 @@ class _SettingsViewState extends State<SettingsView> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        padding: const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 16.0),
         decoration: BoxDecoration(
           gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
             colors: [
               Color(0xFF2B2E5D),
               Color(0xFF282F54),
@@ -81,11 +86,12 @@ class _SettingsViewState extends State<SettingsView> {
           ),
         ),
         child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(
-                height: 50.0,
+                height: 26.0,
               ),
               Text(
                 'Settings',
@@ -93,6 +99,9 @@ class _SettingsViewState extends State<SettingsView> {
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
                     color: Colors.white),
+              ),
+              const SizedBox(
+                height: 26.0,
               ),
               ExpandedSettingPanel(
                 icon: Icons.account_circle_outlined,
@@ -109,6 +118,9 @@ class _SettingsViewState extends State<SettingsView> {
                     .map((e) => Container(
                         margin: const EdgeInsets.only(bottom: 4.0),
                         child: ExpandedSettingTileWidget(
+                          onTap: () {
+                            Get.to(() => ProfileView());
+                          },
                           children: [
                             Text(
                               e.leadingText,
@@ -281,6 +293,9 @@ class _SettingsViewState extends State<SettingsView> {
                     .map((e) => Container(
                         margin: const EdgeInsets.only(bottom: 4.0),
                         child: ExpandedSettingTileWidget(
+                          onTap: () {
+                            Get.to(() => PremiumView());
+                          },
                           children: [
                             Spacer(),
                             Text(

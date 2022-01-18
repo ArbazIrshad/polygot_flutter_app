@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:polygot_app/features/dashboard/presentation/controllers/practice_view_controller.dart';
+import 'package:polygot_app/features/exercises/presentation/views/word_definition_view.dart';
 import 'package:polygot_app/shared/colors.dart';
 import 'package:polygot_app/shared/widgets/rounded_button.dart';
 
@@ -26,9 +27,9 @@ class PracticeView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               // mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                // const SizedBox(
-                //   height: 26.0,
-                // ),
+                const SizedBox(
+                  height: 12.0,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -55,11 +56,13 @@ class PracticeView extends StatelessWidget {
                           fontSize: 20),
                     ),
                     CircularPercentIndicator(
-                      radius: 50.0,
+                      radius: 46.0,
                       linearGradient: LinearGradient(colors: [
                         Color(0xFFA5F6C5),
                         Color(0xFFA5A6F6),
                       ]),
+                      backgroundColor: Colors.transparent,
+                      startAngle: 90,
                       // rotateLinearGradient: true,
                       // arcBackgroundColor: Color(0xFFA5F6C5),
                       // arcType: ArcType.,
@@ -70,7 +73,7 @@ class PracticeView extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.white70,
                           fontWeight: FontWeight.w600,
-                          fontSize: 13,
+                          fontSize: 10.0,
                         ),
                       ),
                     ),
@@ -188,7 +191,7 @@ class PracticeView extends StatelessWidget {
                   child: GradientRoundedButtonWidget(
                     buttonText: 'Start',
                     onpressed: () {
-                      // Get.to(LanguageSelectionView());
+                      Get.to(() => WordDefinitionExerciseView());
                     },
                     colors: LightPinkButtonGradientWithAlignment.colors,
                     begin: LightPinkButtonGradientWithAlignment.beginAlignment,
@@ -200,51 +203,51 @@ class PracticeView extends StatelessWidget {
             ),
           ),
         ),
-        bottomNavigationBar: FluidNavBar(
-          // itemBuilder: (icon, item) {
-          //   if (item.selected) {
-          //     return ShaderMask(
-          //       // decoration: BoxDecoration(
-          //       //   shape: BoxShape.circle,
-          //       //   gradient: LinearGradient(
-          //       //     begin: const Alignment(-1.5, 1.5),
-          //       //     end: const Alignment(1.5, -1.5),
-          //       //     colors: [
-          //       //       Color(0xFFBC78F1),
-          //       //       Color(0xFF2ECCA7),
-          //       //     ],
-          //       //   ),
-          //       // ),
-          //       shaderCallback: (bounds) => LinearGradient(
-          //         begin: const Alignment(-1.5, 1.5),
-          //         end: const Alignment(1.5, -1.5),
-          //         colors: [
-          //           Color(0xFFBC78F1),
-          //           Color(0xFF2ECCA7),
-          //         ],
-          //       ).createShader(bounds),
+        // bottomNavigationBar: FluidNavBar(
+        //   // itemBuilder: (icon, item) {
+        //   //   if (item.selected) {
+        //   //     return ShaderMask(
+        //   //       // decoration: BoxDecoration(
+        //   //       //   shape: BoxShape.circle,
+        //   //       //   gradient: LinearGradient(
+        //   //       //     begin: const Alignment(-1.5, 1.5),
+        //   //       //     end: const Alignment(1.5, -1.5),
+        //   //       //     colors: [
+        //   //       //       Color(0xFFBC78F1),
+        //   //       //       Color(0xFF2ECCA7),
+        //   //       //     ],
+        //   //       //   ),
+        //   //       // ),
+        //   //       shaderCallback: (bounds) => LinearGradient(
+        //   //         begin: const Alignment(-1.5, 1.5),
+        //   //         end: const Alignment(1.5, -1.5),
+        //   //         colors: [
+        //   //           Color(0xFFBC78F1),
+        //   //           Color(0xFF2ECCA7),
+        //   //         ],
+        //   //       ).createShader(bounds),
 
-          //       child: item,
-          //     );
-          //   }
-          //   return item;
-          // },
-          style: FluidNavBarStyle(
-            iconSelectedForegroundColor: Colors.white,
-            barBackgroundColor: Colors.white10,
-            // iconBackgroundColor: Color(0xFFBC78F1),
-          ),
-          animationFactor: 0.3,
-          icons: [
-            FluidNavBarIcon(icon: Icons.checklist),
-            FluidNavBarIcon(icon: Icons.collections_bookmark_outlined),
-            FluidNavBarIcon(icon: Icons.list_outlined),
-            FluidNavBarIcon(
-              icon: Icons.dashboard,
-              // backgroundColor: LinearGradient(colors: )
-            ),
-          ],
-        ),
+        //   //       child: item,
+        //   //     );
+        //   //   }
+        //   //   return item;
+        //   // },
+        //   style: FluidNavBarStyle(
+        //     iconSelectedForegroundColor: Colors.white,
+        //     barBackgroundColor: Colors.white10,
+        //     // iconBackgroundColor: Color(0xFFBC78F1),
+        //   ),
+        //   animationFactor: 0.3,
+        //   icons: [
+        //     FluidNavBarIcon(icon: Icons.checklist),
+        //     FluidNavBarIcon(icon: Icons.collections_bookmark_outlined),
+        //     FluidNavBarIcon(icon: Icons.list_outlined),
+        //     FluidNavBarIcon(
+        //       icon: Icons.dashboard,
+        //       // backgroundColor: LinearGradient(colors: )
+        //     ),
+        //   ],
+        // ),
       ),
     );
   }

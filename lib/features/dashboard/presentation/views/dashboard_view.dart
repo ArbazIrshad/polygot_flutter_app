@@ -280,23 +280,23 @@ class DashboardView extends StatelessWidget {
             ),
           ),
         ),
-        bottomNavigationBar: FluidNavBar(
-          style: FluidNavBarStyle(
-            iconSelectedForegroundColor: Colors.white,
-            barBackgroundColor: Colors.white10,
-            // iconBackgroundColor: Color(0xFFBC78F1),
-          ),
-          animationFactor: 0.3,
-          icons: [
-            FluidNavBarIcon(icon: Icons.checklist),
-            FluidNavBarIcon(icon: Icons.collections_bookmark_outlined),
-            FluidNavBarIcon(icon: Icons.list_outlined),
-            FluidNavBarIcon(
-              icon: Icons.dashboard,
-              // backgroundColor: LinearGradient(colors: )
-            ),
-          ],
-        ),
+        // bottomNavigationBar: FluidNavBar(
+        //   style: FluidNavBarStyle(
+        //     iconSelectedForegroundColor: Colors.white,
+        //     barBackgroundColor: Colors.white10,
+        //     // iconBackgroundColor: Color(0xFFBC78F1),
+        //   ),
+        //   animationFactor: 0.3,
+        //   icons: [
+        //     FluidNavBarIcon(icon: Icons.checklist),
+        //     FluidNavBarIcon(icon: Icons.collections_bookmark_outlined),
+        //     FluidNavBarIcon(icon: Icons.list_outlined),
+        //     FluidNavBarIcon(
+        //       icon: Icons.dashboard,
+        //       // backgroundColor: LinearGradient(colors: )
+        //     ),
+        //   ],
+        // ),
       ),
     );
   }

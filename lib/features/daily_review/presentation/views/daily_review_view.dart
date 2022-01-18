@@ -3,6 +3,7 @@ import 'package:flutter/painting.dart';
 import 'package:get/get.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:polygot_app/features/daily_review/presentation/controllers/daily_review_controller.dart';
+import 'package:polygot_app/features/dashboard/presentation/views/main_page_view.dart';
 import 'package:polygot_app/shared/colors.dart';
 import '../../../authentication/presentation/views/study_mode_selection_view.dart';
 import '../../../dashboard/presentation/views/section_view.dart';
@@ -180,7 +181,7 @@ class DailyReviewView extends StatelessWidget {
               GradientRoundedButtonWidget(
                 buttonText: 'Continue',
                 onpressed: () {
-                  Get.to(SectionView());
+                  Get.to(() => MainPageView());
                 },
                 width: 500,
                 colors: const [

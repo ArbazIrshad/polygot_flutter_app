@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:polygot_app/features/exercises/presentation/controllers/option_word_exercise_controller.dart';
+import 'package:polygot_app/features/exercises/presentation/views/wrong_word_selection_view.dart';
 import 'package:polygot_app/features/exercises/presentation/widgets/black_blurred_container.dart';
 import 'package:polygot_app/shared/colors.dart';
 import 'package:polygot_app/shared/widgets/option_selection_widget.dart';
@@ -158,7 +159,9 @@ class OptionWordExerciseView extends StatelessWidget {
                         ),
                         GradientRoundedButtonWidget(
                           buttonText: 'Validate',
-                          onpressed: () {},
+                          onpressed: () {
+                            Get.to(() => WrongWordSelectionView());
+                          },
                           width: 348,
                           begin: LightPinkButtonGradientWithAlignment
                               .beginAlignment,

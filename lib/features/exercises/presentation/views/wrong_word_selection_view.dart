@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:polygot_app/features/exercises/presentation/controllers/wrong_word_selection_controller.dart';
+import 'package:polygot_app/features/exercises/presentation/views/translate_sentence_exercise_view.dart';
 import 'package:polygot_app/features/exercises/presentation/widgets/black_blurred_container.dart';
 import 'package:polygot_app/shared/colors.dart';
 import 'package:polygot_app/shared/widgets/frosted_blur_widget.dart';
@@ -158,7 +159,9 @@ class WrongWordSelectionView extends StatelessWidget {
                       ),
                       GradientRoundedButtonWidget(
                         buttonText: 'Validate',
-                        onpressed: () {},
+                        onpressed: () {
+                          Get.to(() => TranslateSentenceExerciseView());
+                        },
                         width: 348,
                         begin:
                             LightPinkButtonGradientWithAlignment.beginAlignment,
@@ -168,15 +171,13 @@ class WrongWordSelectionView extends StatelessWidget {
                       const SizedBox(
                         height: 10.0,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 32.0),
-                        child: LinearPercentIndicator(
-                          percent: 0.7,
-                          width: 274,
-                          lineHeight: 14.0,
-                          progressColor: Color(0xFF92C9FB),
-                          backgroundColor: Color(0xFFC4C4C4).withOpacity(0.32),
-                        ),
+                      LinearPercentIndicator(
+                        alignment: MainAxisAlignment.center,
+                        percent: 0.7,
+                        width: 274,
+                        lineHeight: 14.0,
+                        progressColor: Color(0xFF92C9FB),
+                        backgroundColor: Color(0xFFC4C4C4).withOpacity(0.32),
                       ),
                       const SizedBox(
                         height: 10.0,

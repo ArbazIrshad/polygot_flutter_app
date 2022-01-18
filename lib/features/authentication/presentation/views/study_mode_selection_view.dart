@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:polygot_app/features/authentication/presentation/controllers/study_mode_selection_controller.dart';
+import 'package:polygot_app/features/dashboard/presentation/views/main_page_view.dart';
 import 'package:polygot_app/shared/colors.dart';
 
 import '../../../../shared/widgets/rounded_button.dart';
@@ -136,7 +137,9 @@ class StudyModeSelectionView extends StatelessWidget {
                     height: 26.0,
                   ),
                   GradientRoundedButtonWidget(
-                    onpressed: () {},
+                    onpressed: () {
+                      Get.to(() => MainPageView());
+                    },
                     buttonText: 'Next',
                     width: 342,
                     colors: LightPinkButtonGradientWithAlignment.colors,
