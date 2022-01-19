@@ -1,7 +1,7 @@
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:polygot_app/shared/colors.dart';
+import '../../../../shared/colors.dart';
 import '../widgets/custom_text_input_form_field.dart';
 import '../../../../shared/widgets/rounded_button.dart';
 
@@ -123,7 +123,9 @@ class SignupView extends StatelessWidget {
                 GradientRoundedButtonWidget(
                   buttonText: 'Continue',
                   onpressed: () {
-                    Get.to(LanguageSelectionView());
+                    Get.to(() => LanguageSelectionView(),
+                        duration: Duration(seconds: 1),
+                        transition: Transition.fadeIn);
                   },
                   colors: LightPinkButtonGradientWithAlignment.colors,
                   begin: LightPinkButtonGradientWithAlignment.beginAlignment,

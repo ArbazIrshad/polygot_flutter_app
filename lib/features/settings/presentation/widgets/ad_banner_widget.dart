@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:polygot_app/shared/colors.dart';
+import '../../../../shared/colors.dart';
 
 class AdBannerWidget extends StatelessWidget {
   final String mainText;

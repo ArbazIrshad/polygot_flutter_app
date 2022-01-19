@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:polygot_app/features/authentication/presentation/controllers/study_mode_selection_controller.dart';
-import 'package:polygot_app/features/dashboard/presentation/views/main_page_view.dart';
-import 'package:polygot_app/shared/colors.dart';
+import '../controllers/study_mode_selection_controller.dart';
+import '../../../dashboard/presentation/views/main_page_view.dart';
+import '../../../../shared/colors.dart';
 
 import '../../../../shared/widgets/rounded_button.dart';
 import '../widgets/mode_selection_tile_widget.dart';

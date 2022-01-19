@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:polygot_app/features/exercises/presentation/views/select_errors_exercise_view.dart';
-import 'package:polygot_app/features/exercises/presentation/widgets/black_blurred_container.dart';
-import 'package:polygot_app/shared/colors.dart';
+import 'select_errors_exercise_view.dart';
+import '../widgets/black_blurred_container.dart';
+import '../../../../shared/colors.dart';
 import '../widgets/word_tile_widget.dart';
 import '../../../../shared/widgets/rounded_button.dart';
 

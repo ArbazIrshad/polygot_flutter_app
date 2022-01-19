@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:polygot_app/shared/widgets/frosted_blur_widget.dart';
+import '../../../../shared/widgets/frosted_blur_widget.dart';
 
 class BlackBlurredContainer extends StatelessWidget {
   final Widget child;

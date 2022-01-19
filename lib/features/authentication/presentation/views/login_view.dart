@@ -98,7 +98,7 @@ class LoginView extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: () {
-                    Get.to(SignupView());
+                    Get.to(() => SignupView());
                   },
                   child: Text(
                     'Don\'t have an account yet?',

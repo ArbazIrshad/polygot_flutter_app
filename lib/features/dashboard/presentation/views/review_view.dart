@@ -1,7 +1,7 @@
 import 'package:fluid_bottom_nav_bar/fluid_bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:polygot_app/features/dashboard/presentation/views/fav_word_review.dart';
+import 'fav_word_review.dart';
 // import 'package:get/get_core/src/get_main.dart';
 
 class ReviewView extends StatelessWidget {

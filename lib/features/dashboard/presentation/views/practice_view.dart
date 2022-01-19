@@ -2,10 +2,10 @@ import 'package:fluid_bottom_nav_bar/fluid_bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-import 'package:polygot_app/features/dashboard/presentation/controllers/practice_view_controller.dart';
-import 'package:polygot_app/features/exercises/presentation/views/word_definition_view.dart';
-import 'package:polygot_app/shared/colors.dart';
-import 'package:polygot_app/shared/widgets/rounded_button.dart';
+import '../controllers/practice_view_controller.dart';
+import '../../../exercises/presentation/views/word_definition_view.dart';
+import '../../../../shared/colors.dart';
+import '../../../../shared/widgets/rounded_button.dart';
 
 import '../widgets/priority_selection_widget.dart';
 import '../widgets/word_length_selection_widget.dart';

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:polygot_app/features/exercises/presentation/views/option_word_exercise_view.dart';
-import 'package:polygot_app/features/exercises/presentation/widgets/black_blurred_container.dart';
-import 'package:polygot_app/shared/colors.dart';
+import 'option_word_exercise_view.dart';
+import '../widgets/black_blurred_container.dart';
+import '../../../../shared/colors.dart';
 
 import '../../../../shared/widgets/rounded_button.dart';
 import '../widgets/section_container.dart';
@@ -141,7 +141,7 @@ class WordDefinitionExerciseView extends StatelessWidget {
                           GradientRoundedButtonWidget(
                             buttonText: 'Later',
                             onpressed: () {},
-                            width: 168,
+                            width: 160,
                             colors: [
                               Color(0xFFC4C4C4).withOpacity(0.25),
                               Color(0xFFC4C4C4).withOpacity(0.15)
@@ -153,7 +153,7 @@ class WordDefinitionExerciseView extends StatelessWidget {
                             onpressed: () {
                               Get.to(() => OptionWordExerciseView());
                             },
-                            width: 168,
+                            width: 160,
                             begin: LightPinkButtonGradientWithAlignment
                                 .beginAlignment,
                             end: LightPinkButtonGradientWithAlignment

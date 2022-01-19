@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'package:polygot_app/features/daily_review/presentation/controllers/daily_practice_menu_controller.dart';
+import '../controllers/daily_practice_menu_controller.dart';
 import 'daily_review_view.dart';
 import '../widgets/daily_practice_selection_widget.dart';
 import '../../../../shared/widgets/rounded_button.dart';

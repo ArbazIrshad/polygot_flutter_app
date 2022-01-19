@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:polygot_app/shared/widgets/frosted_blur_widget.dart';
+import '../../../../shared/widgets/frosted_blur_widget.dart';
 
 class FavouriteWordReviewView extends StatelessWidget {
   const FavouriteWordReviewView({Key? key}) : super(key: key);

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:outline_gradient_button/outline_gradient_button.dart';
-import 'package:polygot_app/shared/colors.dart';
+import '../../../../shared/colors.dart';
 
 class ModeSelectionTileWidget extends StatelessWidget {
   final String imageAssetPath;

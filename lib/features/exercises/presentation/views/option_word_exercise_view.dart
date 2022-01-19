@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:polygot_app/features/exercises/presentation/controllers/option_word_exercise_controller.dart';
-import 'package:polygot_app/features/exercises/presentation/views/wrong_word_selection_view.dart';
-import 'package:polygot_app/features/exercises/presentation/widgets/black_blurred_container.dart';
-import 'package:polygot_app/shared/colors.dart';
-import 'package:polygot_app/shared/widgets/option_selection_widget.dart';
+import '../controllers/option_word_exercise_controller.dart';
+import 'wrong_word_selection_view.dart';
+import '../widgets/black_blurred_container.dart';
+import '../../../../shared/colors.dart';
+import '../../../../shared/widgets/option_selection_widget.dart';
 import '../../../authentication/presentation/widgets/custom_text_input_form_field.dart';
 import '../../../../shared/widgets/rounded_button.dart';
 

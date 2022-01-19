@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:polygot_app/features/dashboard/presentation/views/profile_view.dart';
-import 'package:polygot_app/features/settings/presentation/views/premium_view.dart';
+import '../../../dashboard/presentation/views/profile_view.dart';
+import 'premium_view.dart';
 
 import '../widgets/expansion_setting_tile_widget.dart';
 

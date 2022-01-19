@@ -10,7 +10,7 @@ class ListWheelScrollViewX extends StatelessWidget {
   /// Direction of the ListWheelScrollViewX
   final Axis scrollDirection;
 
-  final List<Widget>? children;
+  final List<Widget> children;
 
   /// Typically a [FixedExtentScrollController] used to control the current item.
   ///
@@ -65,13 +65,13 @@ class ListWheelScrollViewX extends StatelessWidget {
   final double squeeze;
 
   /// On optional listener that's called when the centered item changes.
-  final ValueChanged<int> onSelectedItemChanged;
+  final ValueChanged<int>? onSelectedItemChanged;
 
   /// {@macro flutter.rendering.wheelList.renderChildrenOutsideViewport}
   final bool renderChildrenOutsideViewport;
 
   /// A delegate that helps lazily instantiating child.
-  final ListWheelChildDelegate? childDelegate;
+  // final ListWheelChildDelegate childDelegate;
 
   /// {@macro flutter.widgets.Clip}
   ///
@@ -95,54 +95,59 @@ class ListWheelScrollViewX extends StatelessWidget {
     this.renderChildrenOutsideViewport = false,
     this.clipBehavior = Clip.hardEdge,
     required this.children,
-  })  : childDelegate = null,
+  }) : //childDelegate = null,
         super(key: key);
 
-  const ListWheelScrollViewX.useDelegate({
-    Key? key,
-    this.scrollDirection = Axis.vertical,
-    this.controller,
-    this.physics,
-    this.diameterRatio = RenderListWheelViewport.defaultDiameterRatio,
-    this.perspective = RenderListWheelViewport.defaultPerspective,
-    this.offAxisFraction = 0.0,
-    this.useMagnifier = false,
-    this.magnification = 1.0,
-    this.overAndUnderCenterOpacity = 1.0,
-    required this.itemExtent,
-    this.squeeze = 1.0,
-    required this.onSelectedItemChanged,
-    this.renderChildrenOutsideViewport = false,
-    this.clipBehavior = Clip.hardEdge,
-    required this.childDelegate,
-  })  : children = null,
-        super(key: key);
+  // const ListWheelScrollViewX.useDelegate(
+  //     {Key? key,
+  //     this.scrollDirection = Axis.vertical,
+  //     this.controller,
+  //     this.physics,
+  //     this.diameterRatio = RenderListWheelViewport.defaultDiameterRatio,
+  //     this.perspective = RenderListWheelViewport.defaultPerspective,
+  //     this.offAxisFraction = 0.0,
+  //     this.useMagnifier = false,
+  //     this.magnification = 1.0,
+  //     this.overAndUnderCenterOpacity = 1.0,
+  //     required this.itemExtent,
+  //     this.squeeze = 1.0,
+  //     required this.onSelectedItemChanged,
+  //     this.renderChildrenOutsideViewport = false,
+  //     this.clipBehavior = Clip.hardEdge,
+  //     required this.childDelegate,
+  //     this.children = const []})
+  //     : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final _childDelegate = children != null
-        ? ListWheelChildListDelegate(
-            children: children?.map((child) {
-                  return RotatedBox(
-                    quarterTurns: scrollDirection == Axis.horizontal ? 1 : 0,
-                    child: child,
-                  );
-                }).toList() ??
-                [])
-        : ListWheelChildBuilderDelegate(
-            builder: (context, index) {
-              return RotatedBox(
-                quarterTurns: scrollDirection == Axis.horizontal ? 1 : 0,
-                child: childDelegate?.build(context, index),
-              );
-            },
-          );
+    final ListWheelChildDelegate _childDelegate;
+    if (children.isNotEmpty) {
+      _childDelegate = ListWheelChildListDelegate(
+          children: children.map((child) {
+        return RotatedBox(
+          quarterTurns: scrollDirection == Axis.horizontal ? 1 : 0,
+          child: child,
+        );
+      }).toList());
+    } else {
+      _childDelegate = ListWheelChildListDelegate(children: []);
+    }
+    // else {
+    //   _childDelegate = ListWheelChildBuilderDelegate(
+    //     builder: (context, index) {
+    //       return RotatedBox(
+    //         quarterTurns: scrollDirection == Axis.horizontal ? 1 : 0,
+    //         child: childDelegate!.build(context, index),
+    //       );
+    //     },
+    //   );
+    // }
 
     return RotatedBox(
       quarterTurns: scrollDirection == Axis.horizontal ? 3 : 0,
       child: ListWheelScrollView.useDelegate(
         controller: controller,
-        physics: FixedExtentScrollPhysics(),
+        physics: physics,
         diameterRatio: diameterRatio,
         perspective: perspective,
         offAxisFraction: offAxisFraction,

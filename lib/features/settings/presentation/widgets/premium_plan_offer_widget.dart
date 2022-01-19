@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:polygot_app/shared/colors.dart';
+import '../../../../shared/colors.dart';
 
 class PremiumPlanOfferWidget extends StatelessWidget {
   final String price;

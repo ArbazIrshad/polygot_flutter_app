@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:polygot_app/features/settings/presentation/controllers/premium_offer_controller.dart';
-import 'package:polygot_app/features/settings/presentation/widgets/ad_banner_widget.dart';
-import 'package:polygot_app/features/settings/presentation/widgets/gradient_text.dart';
-import 'package:polygot_app/features/settings/presentation/widgets/premium_plan_offer_widget.dart';
-import 'package:polygot_app/shared/colors.dart';
-import 'package:polygot_app/shared/widgets/rounded_button.dart';
+import '../controllers/premium_offer_controller.dart';
+import '../widgets/ad_banner_widget.dart';
+import '../widgets/gradient_text.dart';
+import '../widgets/premium_plan_offer_widget.dart';
+import '../../../../shared/colors.dart';
+import '../../../../shared/widgets/rounded_button.dart';
 
 class PremiumView extends StatelessWidget {
   const PremiumView({Key? key}) : super(key: key);

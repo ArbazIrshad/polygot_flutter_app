@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:auth_buttons/auth_buttons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:polygot_app/shared/colors.dart';
+import '../../../../shared/colors.dart';
 import 'login_view.dart';
 import 'signup_view.dart';
 
@@ -67,7 +67,9 @@ class WelcomeView extends StatelessWidget {
                 GradientRoundedButtonWidget(
                   buttonText: 'Login',
                   onpressed: () {
-                    Get.to(LoginView());
+                    Get.to(() => LoginView(),
+                        duration: Duration(seconds: 1),
+                        transition: Transition.rightToLeft);
                   },
                   width: 500,
                   colors: const [
@@ -82,7 +84,9 @@ class WelcomeView extends StatelessWidget {
                 GradientRoundedButtonWidget(
                   buttonText: 'Signup',
                   onpressed: () {
-                    Get.to(SignupView());
+                    Get.to(() => SignupView(),
+                        duration: Duration(seconds: 1),
+                        transition: Transition.rightToLeft);
                   },
                   width: 500,
                   colors: LightPinkButtonGradientWithAlignment.colors,

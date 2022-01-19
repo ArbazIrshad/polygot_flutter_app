@@ -1,10 +1,10 @@
 import 'package:fluid_bottom_nav_bar/fluid_bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:polygot_app/features/dashboard/presentation/views/dashboard_view.dart';
-import 'package:polygot_app/features/dashboard/presentation/views/practice_view.dart';
-import 'package:polygot_app/features/dashboard/presentation/views/review_view.dart';
-import 'package:polygot_app/features/settings/presentation/views/settings_view.dart';
+import 'dashboard_view.dart';
+import 'practice_view.dart';
+import 'review_view.dart';
+import '../../../settings/presentation/views/settings_view.dart';
 
 class MainPageView extends StatelessWidget {
   final PageController controller = PageController(initialPage: 1);
