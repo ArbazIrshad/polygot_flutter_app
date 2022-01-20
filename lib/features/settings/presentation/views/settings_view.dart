@@ -7,10 +7,11 @@ import '../widgets/expansion_setting_tile_widget.dart';
 
 class ExpansionTileElement {
   final String leadingText;
-  final String trailingText;
+  final String? trailingText;
+  final Widget? trailingWidget;
 
   const ExpansionTileElement(
-      {required this.leadingText, required this.trailingText});
+      {required this.leadingText, this.trailingWidget, this.trailingText});
 }
 
 const tileElementsList = [
@@ -37,6 +38,40 @@ const tileElementsList = [
   ExpansionTileElement(
     leadingText: 'Apple',
     trailingText: 'Connected',
+  ),
+];
+
+var settingsElementsList = [
+  ExpansionTileElement(
+    leadingText: 'Theme',
+    trailingWidget: Switch(
+      value: true, onChanged: (value) {}, activeColor: Color(0xA65ADFFC),
+      // trackColor: Color(0xFF03111B),
+    ),
+    // trailingText: 'Add/Change',
+  ),
+  ExpansionTileElement(
+    leadingText: 'App Language',
+    trailingText: 'Change',
+  ),
+  ExpansionTileElement(
+    leadingText: 'Notifications',
+    trailingText: '>',
+  ),
+  ExpansionTileElement(
+    leadingText: 'Daily Goal',
+    trailingText: '>',
+  ),
+  ExpansionTileElement(
+    leadingText: 'Practice Reminder',
+    trailingWidget: Switch(
+      value: false, onChanged: (value) {}, activeColor: Color(0xA65ADFFC),
+      // trackColor: Color(0xFF03111B),
+    ),
+  ),
+  ExpansionTileElement(
+    leadingText: 'Time of Reminder',
+    trailingText: '',
   ),
 ];
 
@@ -132,7 +167,7 @@ class _SettingsViewState extends State<SettingsView> {
                             ),
                             Spacer(),
                             Text(
-                              e.trailingText,
+                              e.trailingText ?? '',
                               style: TextStyle(
                                   fontFamily: 'Roboto',
                                   fontWeight: FontWeight.w300,
@@ -184,7 +219,7 @@ class _SettingsViewState extends State<SettingsView> {
                   });
                 },
                 panelHeading: 'Settings',
-                elementList: tileElementsList
+                elementList: settingsElementsList
                     .map((e) => Container(
                         margin: const EdgeInsets.only(bottom: 4.0),
                         child: ExpandedSettingTileWidget(
@@ -198,55 +233,136 @@ class _SettingsViewState extends State<SettingsView> {
                                   color: Colors.white),
                             ),
                             Spacer(),
-                            Text(
-                              e.trailingText,
-                              style: TextStyle(
-                                  fontFamily: 'Roboto',
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 12,
-                                  color: Colors.white),
-                            ),
+                            e.trailingText != null
+                                ? Text(
+                                    e.trailingText ?? '',
+                                    style: TextStyle(
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w300,
+                                        fontSize: 12,
+                                        color: Colors.white),
+                                  )
+                                : Container(child: e.trailingWidget),
                           ],
                         )))
                     .toList(),
               ),
               const SizedBox(height: 8.0),
               ExpandedSettingPanel(
-                icon: Icons.menu_book,
-                // isExpanded: isExpanded,
-                // elementList: tileElementsList,
-                onExpansionChanged: (isOpen) {
-                  setState(() {
-                    isExpanded = isOpen;
-                  });
-                },
-                panelHeading: 'Exercise',
-                elementList: tileElementsList
-                    .map((e) => Container(
-                        margin: const EdgeInsets.only(bottom: 4.0),
-                        child: ExpandedSettingTileWidget(
+                  icon: Icons.menu_book,
+                  // isExpanded: isExpanded,
+                  // elementList: tileElementsList,
+                  onExpansionChanged: (isOpen) {
+                    setState(() {
+                      isExpanded = isOpen;
+                    });
+                  },
+                  panelHeading: 'Exercise',
+                  elementList: [
+                    ExpandedSettingTileWidget(
+                      children: [
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
-                              e.leadingText,
+                              'Native Subtitle',
                               style: TextStyle(
                                   fontFamily: 'Roboto',
                                   fontWeight: FontWeight.w500,
                                   fontSize: 14,
                                   color: Colors.white),
                             ),
-                            Spacer(),
                             Text(
-                              e.trailingText,
+                              'See words in native language',
                               style: TextStyle(
                                   fontFamily: 'Roboto',
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 12,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 8,
                                   color: Colors.white),
                             ),
                           ],
-                        )))
-                    .toList(),
-              ),
+                        ),
+                        const Spacer(),
+                        Switch(
+                          value: true,
+                          onChanged: (value) {},
+                          trackColor:
+                              MaterialStateProperty.resolveWith((states) {
+                            if (states.contains(MaterialState.selected)) {
+                              return Colors.white;
+                            }
+                          }),
+                          activeColor: Color(0xFFB0BEC5),
+                        )
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 4.0,
+                    ),
+                    ExpandedSettingTileWidget(
+                      children: [
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              'Roman Assitant',
+                              style: TextStyle(
+                                  fontFamily: 'Roboto',
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 14,
+                                  color: Colors.white),
+                            ),
+                            Text(
+                              'See pronunciation in native alphabet',
+                              style: TextStyle(
+                                  fontFamily: 'Roboto',
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 8,
+                                  color: Colors.white),
+                            ),
+                          ],
+                        ),
+                        const Spacer(),
+                        Switch(
+                          value: true,
+                          onChanged: (value) {},
+                          trackColor:
+                              MaterialStateProperty.resolveWith((states) {
+                            if (states.contains(MaterialState.selected)) {
+                              return Colors.white;
+                            }
+                          }),
+                          activeColor: Color(0xFFB0BEC5),
+                        )
+                      ],
+                    ),
+                  ]
+                  //  tileElementsList
+                  //     .map((e) => Container(
+                  //         margin: const EdgeInsets.only(bottom: 4.0),
+                  //         child: ExpandedSettingTileWidget(
+                  //           children: [
+                  //             Text(
+                  //               e.leadingText,
+                  //               style: TextStyle(
+                  //                   fontFamily: 'Roboto',
+                  //                   fontWeight: FontWeight.w500,
+                  //                   fontSize: 14,
+                  //                   color: Colors.white),
+                  //             ),
+                  //             Spacer(),
+                  //             Text(
+                  //               e.trailingText ?? '',
+                  //               style: TextStyle(
+                  //                   fontFamily: 'Roboto',
+                  //                   fontWeight: FontWeight.w300,
+                  //                   fontSize: 12,
+                  //                   color: Colors.white),
+                  //             ),
+                  //           ],
+                  //         )))
+                  //     .toList(),
+                  ),
               const SizedBox(height: 8.0),
               ExpandedSettingPanel(
                 icon: Icons.privacy_tip_outlined,

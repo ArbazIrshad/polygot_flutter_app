@@ -58,7 +58,10 @@ class ModeSelectionTileWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Image.asset(imageAssetPath),
+            Image.asset(
+              imageAssetPath,
+              height: 70.0,
+            ),
             Text(
               text,
               textAlign: TextAlign.center,

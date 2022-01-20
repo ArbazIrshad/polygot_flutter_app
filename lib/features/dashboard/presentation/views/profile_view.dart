@@ -65,7 +65,10 @@ class ProfileView extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Image.asset('assets/images/work.png'),
+                    Image.asset(
+                      'assets/images/work.png',
+                      height: 70.0,
+                    ),
                     Text(
                       'Mark Robinson',
                       style: TextStyle(

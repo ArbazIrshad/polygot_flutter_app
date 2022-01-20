@@ -209,7 +209,7 @@ class WrongWordSelectionView extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(
-                            height: 24.0,
+                            height: 16.0,
                           )
                         ],
                       ),
